@@ -1,9 +1,4 @@
-import {
-  colors,
-  fontSizes,
-  fontWeights,
-  fonts,
-} from "@controle-devs-ui/tokens"
+import { colors, fontSizes, fontWeights, fonts } from '@controle-devs-ui/tokens'
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {

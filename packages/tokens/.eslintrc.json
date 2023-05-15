@@ -1,0 +1,3 @@
+{
+    "extends":"@controle-devs-ui/eslint-config"
+}

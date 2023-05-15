@@ -2,15 +2,21 @@
   "name": "@controle-devs-ui/react",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./dist/index.js",
+  "module":"./dist/index.mjs",
+  "types":"./dist/index.d.ts",
   "scripts": {
     "build":"tsup src/index.ts --format esm,cjs --dts",
-    "dev":"tsup src/index.ts --format esm,cjs --dts --watch"
+    "dev":"tsup src/index.ts --format esm,cjs --dts --watch",
+    "lint": "eslint src/**/*.ts* --fix"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@controle-devs-ui/tokens":"*",
+    "@controle-devs-ui/ts-config":"*",
+    "@controle-devs-ui/eslint-config":"*",
     "tsup": "^6.7.0",
     "typescript": "^5.0.4"
   }

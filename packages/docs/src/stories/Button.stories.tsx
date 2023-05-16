@@ -1,8 +1,12 @@
 import type { StoryObj, Meta } from "@storybook/react";
-import { Button } from "@controle-devs-ui/react";
+import { Button, ButtonProps } from "@controle-devs-ui/react";
 export default {
   title: "Button",
   component: Button,
-} as Meta;
+} as Meta<ButtonProps>;
 
-export const Primary: StoryObj = {};
+export const Primary: StoryObj<ButtonProps> = {
+  args: {
+    text: "teste2",
+  },
+};

@@ -28,9 +28,11 @@
     "vite": "^4.3.6"
   },
   "dependencies": {
-    "@controle-devs-ui/eslint-config": "*",
+    "@controle-devs-ui/eslint-config":"*",
     "@controle-devs-ui/react": "*",
     "@controle-devs-ui/tokens": "*",
+    "@controle-devs-ui/ts-config": "*",
+    "polished": "^4.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }

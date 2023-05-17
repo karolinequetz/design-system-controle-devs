@@ -1,8 +1,8 @@
-'use client'
-import React from 'react'
-import { DotsVerticalIcon } from '@radix-ui/react-icons'
-import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
-import * as Styles from './styles'
+"use client";
+import React from "react";
+import { DotsVerticalIcon } from "@radix-ui/react-icons";
+import * as DropdownMenu from "@radix-ui/react-dropdown-menu";
+import * as Styles from "./styles";
 
 const Dropdown = () => {
   return (
@@ -27,7 +27,7 @@ const Dropdown = () => {
         </DropdownMenu.Content>
       </DropdownMenu.Portal>
     </DropdownMenu.Root>
-  )
-}
+  );
+};
 
-export default Dropdown
+export default Dropdown;

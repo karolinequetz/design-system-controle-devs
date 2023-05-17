@@ -1,10 +1,10 @@
-'use client'
-import React from 'react'
-import * as SwitchUI from '@radix-ui/react-switch'
-import * as Styles from './styles'
+"use client";
+import React from "react";
+import * as SwitchUI from "@radix-ui/react-switch";
+import * as Styles from "./styles";
 
 interface Props {
-  label: string
+  label: string;
 }
 
 const Switch = ({ label }: Props) => (
@@ -16,6 +16,6 @@ const Switch = ({ label }: Props) => (
       <SwitchUI.Thumb className={Styles.switchThumb()} />
     </SwitchUI.Root>
   </div>
-)
+);
 
-export default Switch
+export default Switch;

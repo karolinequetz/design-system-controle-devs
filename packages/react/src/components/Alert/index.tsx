@@ -1,13 +1,13 @@
-'use client'
-import React, { ReactNode } from 'react'
-import * as AlertDialog from '@radix-ui/react-alert-dialog'
-import * as Styles from './styles'
+"use client";
+import React, { ReactNode } from "react";
+import * as AlertDialog from "@radix-ui/react-alert-dialog";
+import * as Styles from "./styles";
 
 interface Props {
-  title: string
-  children: ReactNode
-  open: boolean
-  onClose: () => void
+  title: string;
+  children: ReactNode;
+  open: boolean;
+  onClose: () => void;
 }
 
 const Alert = ({ title, children, open, onClose }: Props) => (
@@ -34,6 +34,6 @@ const Alert = ({ title, children, open, onClose }: Props) => (
       </AlertDialog.Content>
     </AlertDialog.Portal>
   </AlertDialog.Root>
-)
+);
 
-export default Alert
+export default Alert;

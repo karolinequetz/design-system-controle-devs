@@ -6,7 +6,10 @@ export interface ButtonProps {
 }
 
 export const Button = ({ text, ...props }: ButtonProps) => (
-  <button {...props} className={Styles.button()}>
+  <button
+    {...props}
+    className="bg-blue-900 hover:bg-gray100 text-gray-500 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
+  >
     {text}
   </button>
 );

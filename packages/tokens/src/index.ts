@@ -1,7 +1,7 @@
-export * from './colors'
+export * from "./colors";
 
-export * from './font-sizes'
+export * from "./font-sizes";
 
-export * from './font-weights'
+export * from "./font-weights";
 
-export * from './fonts'
+export * from "./fonts";

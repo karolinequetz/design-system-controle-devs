@@ -1,12 +1,12 @@
-'use client'
-import React from 'react'
-import * as CheckboxInput from '@radix-ui/react-checkbox'
-import { CheckIcon } from '@radix-ui/react-icons'
+"use client";
+import React from "react";
+import * as CheckboxInput from "@radix-ui/react-checkbox";
+import { CheckIcon } from "@radix-ui/react-icons";
 
-import * as Styles from './styles'
+import * as Styles from "./styles";
 
 interface Props {
-  text: string
+  text: string;
 }
 const Checkbox = ({ text, ...props }: Props) => (
   <CheckboxInput.Root {...props} className={Styles.checkboxRoot()}>
@@ -17,6 +17,6 @@ const Checkbox = ({ text, ...props }: Props) => (
     </div>
     <span className={Styles.span()}>{text}</span>
   </CheckboxInput.Root>
-)
+);
 
-export default Checkbox
+export default Checkbox;

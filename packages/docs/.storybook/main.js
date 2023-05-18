@@ -6,7 +6,8 @@ const config = {
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
     '@storybook/addon-docs',
-    '@storybook/preset-typescript'
+    '@storybook/preset-typescript',
+    '@storybook/addon-postcss'
   ],
   framework: {
     name: "@storybook/react-vite",

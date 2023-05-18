@@ -1,5 +1,8 @@
 /** @type { import('@storybook/react').Preview } */
-import  {themes} from '@storybook/theming'
+
+import "../src/styles/tailwind.css"
+
+  import  {themes} from '@storybook/theming'
 const preview = {
   parameters: {
     actions: { argTypesRegex: "^on[A-Z].*" },

@@ -1,5 +1,6 @@
+import "../styles/tailwind.css";
 import type { StoryObj, Meta } from "@storybook/react";
-import { Button, ButtonProps } from "./Button";
+import { Button, ButtonProps } from "@controle-devs-ui/react";
 export default {
   title: "Components/Button",
   component: Button,

@@ -1,10 +1,10 @@
-'use client'
-import React, { ReactNode } from 'react'
-import * as Styles from './styles'
+"use client";
+import React, { ReactNode } from "react";
+import * as Styles from "./styles";
 
 interface Props {
-  title: string
-  children: ReactNode
+  title: string;
+  children: ReactNode;
 }
 const Card = ({ title, children }: Props) => (
   <div className={Styles.width()}>
@@ -13,6 +13,6 @@ const Card = ({ title, children }: Props) => (
       <div className={Styles.children()}>{children}</div>
     </div>
   </div>
-)
+);
 
-export default Card
+export default Card;

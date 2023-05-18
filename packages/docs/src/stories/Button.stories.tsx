@@ -1,4 +1,3 @@
-import "../styles/tailwind.css";
 import type { StoryObj, Meta } from "@storybook/react";
 import { Button, ButtonProps } from "@controle-devs-ui/react";
 export default {
@@ -8,6 +7,6 @@ export default {
 
 export const Primary: StoryObj<ButtonProps> = {
   args: {
-    text: "teste",
+    text: "Button",
   },
 };

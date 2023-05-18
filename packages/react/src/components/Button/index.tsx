@@ -1,5 +1,5 @@
 import React from "react";
-import "../../styles/index.css";
+import "../../styles/tailwind.css";
 import * as Styles from "./styles";
 export interface ButtonProps {
   text: string;

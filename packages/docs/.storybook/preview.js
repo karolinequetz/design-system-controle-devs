@@ -1,6 +1,6 @@
 /** @type { import('@storybook/react').Preview } */
 
-import "../src/styles/tailwind.css"
+import "@controle-devs-ui/react/src/styles/tailwind.css"
 
   import  {themes} from '@storybook/theming'
 const preview = {

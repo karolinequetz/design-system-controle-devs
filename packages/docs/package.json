@@ -17,6 +17,7 @@
     "@storybook/addon-interactions": "^7.0.12",
     "@storybook/addon-links": "^7.0.12",
     "@storybook/addon-postcss": "^2.0.0",
+    "@storybook/addon-styling": "^1.0.8",
     "@storybook/blocks": "^7.0.12",
     "@storybook/preset-typescript": "^3.0.0",
     "@storybook/react": "^7.0.12",
@@ -37,7 +38,6 @@
     "@controle-devs-ui/react": "*",
     "@controle-devs-ui/tokens": "*",
     "@controle-devs-ui/ts-config": "*",
-    "polished": "^4.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }

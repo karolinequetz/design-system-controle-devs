@@ -1,13 +1,24 @@
 import React from "react";
-export interface ButtonProps {
-  text: string;
-}
+import { ButtonProps } from "./styles";
+import * as Styles from "./styles";
 
-export const Button = ({ text, ...props }: ButtonProps) => (
-  <button
-    {...props}
-    className="bg-secondary-purple hover:bg-gray100 text-gray-500 font-semibold py-2 px-4 border border-gray-400 rounded shadow"
-  >
-    {text}
-  </button>
-);
+export const Button = ({
+  text,
+  intent,
+  shape,
+  size,
+  imageSrc,
+  alt,
+  icon,
+  ...props
+}: ButtonProps) => {
+  return (
+    <button {...props} className={Styles.button({ intent, shape, size })}>
+      {icon && <div className={Styles.buttonIcon()}>{icon}</div>}
+      {imageSrc && (
+        <img src={imageSrc} alt={alt} className={Styles.buttonImage()} />
+      )}
+      {text}
+    </button>
+  );
+};

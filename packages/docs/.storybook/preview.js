@@ -1,4 +1,7 @@
 /** @type { import('@storybook/react').Preview } */
+
+import "@controle-devs-ui/react/dist/index.css"
+
 import  {themes} from '@storybook/theming'
 const preview = {
   parameters: {

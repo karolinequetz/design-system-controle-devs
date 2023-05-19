@@ -1,14 +1,21 @@
-import { colors, fontSizes, fontWeights, fonts } from '@controle-devs-ui/tokens'
+import {
+  colors,
+  fontSizes,
+  fontWeights,
+  fonts,
+} from "@controle-devs-ui/tokens";
 
-/** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [],
+  content: ["./src/**/*.{js,jsx,ts,tsx}"],
+  purge: ["./src/**/*.{js,jsx,ts,tsx}"],
+  darkMode: true,
   theme: {
     extend: {},
-    fontSize: fontSizes,
-    fontWeight: fontWeights,
-    fontFamily: fonts,
-    colors: colors,
+    fontSize: { ...fontSizes },
+    fontWeight: { ...fontWeights },
+    fontFamily: { ...fonts },
+    colors: { ...colors },
   },
+  variants: {},
   plugins: [],
-}
+};

@@ -5,7 +5,9 @@ const config = {
     "@storybook/addon-links",
     "@storybook/addon-essentials",
     "@storybook/addon-interactions",
-    '@storybook/addon-docs'
+    "@storybook/addon-docs",
+     "storybook-tailwind-dark-mode",
+     
   ],
   framework: {
     name: "@storybook/react-vite",

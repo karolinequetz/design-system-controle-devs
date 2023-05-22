@@ -1,6 +1,7 @@
-import React, { ReactNode } from 'react';
-import * as Styles from './styles';
-import { Pencil2Icon, TrashIcon } from '@radix-ui/react-icons';
+import React, { ReactNode } from "react";
+import { Pencil2Icon, TrashIcon } from "@radix-ui/react-icons";
+import * as Styles from "./styles";
+
 export interface CardProps {
   title: string;
   children: ReactNode;

@@ -7,10 +7,11 @@ export default {
 
 export const Primary: StoryObj<CardProps> = {
   args: {
-    title: "Card Controle de devs",
+    title: "Lorem Ipsum ",
     children:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum.",
+    skills: ["react", "c#", "slq"],
+    image:
+      "https://plus.unsplash.com/premium_photo-1661308204413-399aa3865ca7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2071&q=80",
   },
-  image:
-    "https://media.istockphoto.com/id/1433145639/pt/foto/american-teenage-woman-sitting-in-white-office-with-laptop-she-is-a-student-studying-online.jpg?s=2048x2048&w=is&k=20&c=LUop4rGslvwtthr7TWRAwE1bDwf-yEQij2GBNIA7Rbk=",
 };

@@ -1,8 +1,9 @@
 /** @type { import('@storybook/react').Preview } */
 
+import  {themes} from '@storybook/theming';
 import "@controle-devs-ui/react/dist/index.css"
 
-import  {themes} from '@storybook/theming'
+
 const preview = {
   parameters: {
     actions: { argTypesRegex: "^on[A-Z].*" },
@@ -12,11 +13,14 @@ const preview = {
         date: /Date$/,
       },
     },
-    docs:{
+      docs:{
       theme:themes.dark
-    }
-  },
-  
+    }, 
+  }
 };
 
 export default preview;
+
+export const globalTypes = {
+  darkMode: true,
+};

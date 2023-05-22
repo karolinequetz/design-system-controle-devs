@@ -15,7 +15,7 @@ export const Button = ({
   const buttonClasses = Styles.button({ intent, size });
   return (
     <button {...props} className={className || buttonClasses}>
-      {icon && <div className={Styles.buttonIcon()}>{icon}</div>}
+      {icon && <div className={className || Styles.buttonIcon()}>{icon}</div>}
       {imageSrc && (
         <img src={imageSrc} alt={alt} className={Styles.buttonImage()} />
       )}

@@ -7,7 +7,7 @@ export const button = cva(
     variants: {
       intent: {
         primary:
-          "bg-primary-purple text-white hover:bg-violet-600  focus:ring-white focus:ring-offset-2 rounded-md h-8 w-40 ",
+          "bg-primary-purple text-white hover:bg-violet-600  focus:ring-white focus:ring-offset-2 rounded-md ",
 
         secondary:
           "bg-transparent border-indigo-700 hover:text-white border-2 text-indigo-700 dark:text-white hover:bg-violet-600  focus:ring-white focus:ring-offset-2  rounded-md h-8 w-40",
@@ -16,8 +16,8 @@ export const button = cva(
         transparent: " rounded-s-sm bg-transparent",
       },
       size: {
-        small: ["text-sm"],
-        medium: ["text-base"],
+        small: ["text-sm h-8 w-28 "],
+        medium: ["text-base h-8 w-40 "],
       },
     },
     defaultVariants: {

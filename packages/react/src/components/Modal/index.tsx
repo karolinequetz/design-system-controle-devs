@@ -33,14 +33,11 @@ export const Modal = ({
           {children}
           <div className={Styles.closeDiv()}>
             <Dialog.Close asChild>
-              <button onClick={onClose} className={Styles.backButton()}>
-                Voltar
-              </button>
+              <Button text="Voltar" size="small" onClick={onClose} />
             </Dialog.Close>
           </div>
           <Dialog.Close asChild>
             <Button
-              intent="transparent"
               icon={<Cross2Icon />}
               onClick={onClose}
               className={Styles.closeButton()}

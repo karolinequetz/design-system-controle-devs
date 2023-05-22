@@ -1,6 +1,7 @@
 import React, { ReactNode } from "react";
 import { Pencil2Icon, TrashIcon } from "@radix-ui/react-icons";
 import * as Styles from "./styles";
+import { Button } from "../Button";
 
 export interface CardProps {
   title: string;
@@ -22,12 +23,16 @@ export const Card = ({
 }: CardProps) => (
   <div className={Styles.container()} onClick={onClick}>
     <div className={Styles.actions()}>
-      <button className={Styles.EditAndDeleteButtons()} onClick={onChange}>
-        <Pencil2Icon className={Styles.EditAndDeleteIcons()} />
-      </button>
-      <button className={Styles.EditAndDeleteButtons()} onClick={onDelete}>
-        <TrashIcon className={Styles.EditAndDeleteIcons()} />
-      </button>
+      <Button
+        className={Styles.EditAndDeleteButtons()}
+        onClick={onChange}
+        icon={<Pencil2Icon className={Styles.EditAndDeleteIcons()} />}
+      ></Button>
+      <Button
+        className={Styles.EditAndDeleteButtons()}
+        onClick={onDelete}
+        icon={<TrashIcon className={Styles.EditAndDeleteIcons()} />}
+      ></Button>
     </div>
     <div className={Styles.imageContainer()}>
       <img className={Styles.imageContent()} alt="profile" src={image} />

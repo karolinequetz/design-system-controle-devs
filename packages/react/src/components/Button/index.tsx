@@ -9,10 +9,12 @@ export const Button = ({
   imageSrc,
   alt,
   icon,
+  className,
   ...props
 }: ButtonProps) => {
+  const buttonClasses = Styles.button({ intent, size });
   return (
-    <button {...props} className={Styles.button({ intent, size })}>
+    <button {...props} className={className || buttonClasses}>
       {icon && <div className={Styles.buttonIcon()}>{icon}</div>}
       {imageSrc && (
         <img src={imageSrc} alt={alt} className={Styles.buttonImage()} />

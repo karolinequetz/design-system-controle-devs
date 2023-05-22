@@ -12,7 +12,6 @@ export const DefaultButton: StoryObj<ButtonProps> = {
   args: {
     text: "Default Button",
     size: "medium",
-    shape: "rectangular",
     onClick: () => {
       console.log("Default Button clicked");
     },
@@ -24,7 +23,6 @@ export const PrimaryButton: StoryObj<ButtonProps> = {
     text: "Primary Button",
     intent: "primary",
     size: "medium",
-    shape: "rectangular",
     onClick: () => {
       console.log("Primary Button clicked");
     },
@@ -36,7 +34,6 @@ export const SecondaryButton: StoryObj<ButtonProps> = {
     text: "Secondary Button",
     intent: "secondary",
     size: "medium",
-    shape: "rectangular",
     onClick: () => {
       console.log("Secondary Button clicked");
     },
@@ -47,7 +44,6 @@ export const MenuButton: StoryObj<ButtonProps> = {
   args: {
     intent: "menuButton",
     size: "small",
-    shape: "circular",
     onClick: () => {
       console.log("Menu Button clicked");
     },
@@ -60,10 +56,9 @@ export const IconButton: StoryObj<ButtonProps> = {
   args: {
     intent: "transparent",
     size: "medium",
-    shape: "circular",
     onClick: () => {
       console.log("Transparent Button clicked");
     },
-    icon: <SunIcon />, // Substitua pelo componente real do ícone
+    icon: <SunIcon />,
   },
 };

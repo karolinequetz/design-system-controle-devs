@@ -5,7 +5,6 @@ import * as Styles from "./styles";
 export const Button = ({
   text,
   intent,
-  shape,
   size,
   imageSrc,
   alt,
@@ -13,7 +12,7 @@ export const Button = ({
   ...props
 }: ButtonProps) => {
   return (
-    <button {...props} className={Styles.button({ intent, shape, size })}>
+    <button {...props} className={Styles.button({ intent, size })}>
       {icon && <div className={Styles.buttonIcon()}>{icon}</div>}
       {imageSrc && (
         <img src={imageSrc} alt={alt} className={Styles.buttonImage()} />

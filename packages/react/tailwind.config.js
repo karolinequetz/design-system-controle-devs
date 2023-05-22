@@ -22,10 +22,10 @@ module.exports = {
         red: colors.red,
         neutral: colors.neutral,
         primary: {
-          purple: colors.purple[800],
+          purple: colors.purple[700],
         },
         secondary: {
-          purple: colors.purple[700],
+          purple: colors.purple[600],
         },
       },
     },

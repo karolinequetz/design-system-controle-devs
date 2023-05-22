@@ -24,12 +24,12 @@ export const button = cva(
       intent: "primary",
       size: "medium",
     },
-  }
+  },
 );
 
 export const buttonImage = cva("h-8 w-8 rounded-full");
 export const buttonIcon = cva(
-  "p-2rounded-lg text-sky-950 hover:text-sky-900 dark:text-gray-300 dark:hover:text-white"
+  "p-2rounded-lg text-sky-950 hover:text-sky-900 dark:text-gray-300 dark:hover:text-white",
 );
 
 export interface ButtonProps

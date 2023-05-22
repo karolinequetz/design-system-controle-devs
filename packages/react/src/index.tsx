@@ -1,5 +1,5 @@
-import "./styles/global.css";
+import './styles/global.css';
 
-export * from "./components/Button";
+export * from './components/Button';
 
-export * from "./components/Card";
+export * from './components/Card';

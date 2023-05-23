@@ -10,6 +10,7 @@ export interface AlertProps {
   open: boolean;
   onClose: () => void;
   onDelete: () => void;
+  elementAlert?: HTMLElement;
 }
 
 export const Alert = ({
@@ -18,9 +19,10 @@ export const Alert = ({
   open,
   onClose,
   onDelete,
+  elementAlert,
 }: AlertProps) => (
   <AlertDialog.Root open={open} onOpenChange={onClose}>
-    <AlertDialog.Portal>
+    <AlertDialog.Portal container={elementAlert}>
       <AlertDialog.Overlay className={Styles.overlay()} />
       <AlertDialog.Content className={Styles.content()}>
         <AlertDialog.Title className={Styles.title()}>
@@ -39,11 +41,7 @@ export const Alert = ({
             ></Button>
           </AlertDialog.Cancel>
           <AlertDialog.Action asChild>
-            <Button
-              intent="primary"
-              text="Sim, desejo deletar!"
-              onClick={onDelete}
-            ></Button>
+            <Button text="Sim, desejo deletar!" onClick={onDelete}></Button>
           </AlertDialog.Action>
         </div>
       </AlertDialog.Content>

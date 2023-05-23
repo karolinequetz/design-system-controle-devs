@@ -11,5 +11,6 @@ export const Primary: StoryObj<AlertProps> = {
     title: "Atenção!",
     children: "Deseja excluir permanentemente?",
     open: true,
+    elementAlert: document.getElementById("storybook-root"),
   },
 };

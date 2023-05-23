@@ -1,12 +1,13 @@
-"use client";
-import React, { ReactNode } from "react";
-import * as Dialog from "@radix-ui/react-dialog";
-import { Cross2Icon } from "@radix-ui/react-icons";
+'use client';
+import React, { ReactNode } from 'react';
+import * as Dialog from '@radix-ui/react-dialog';
+import { Cross2Icon } from '@radix-ui/react-icons';
 
-import * as Styles from "./styles";
-import { Button } from "../Button";
+import { Button } from '../Button';
 
-interface Props {
+import * as Styles from './styles';
+
+export interface ModalProps {
   title: string;
   description: string;
   children?: ReactNode;
@@ -20,7 +21,7 @@ export const Modal = ({
   children,
   open,
   onClose,
-}: Props) => {
+}: ModalProps) => {
   return (
     <Dialog.Root open={open} onOpenChange={onClose}>
       <Dialog.Portal>

@@ -1,29 +1,29 @@
-import React from "react";
-import { Meta } from "@storybook/react";
-import { Modal } from "@controle-devs-ui/react";
+import React from 'react';
+import { Meta } from '@storybook/react';
+import { Modal, ModalProps } from '@controle-devs-ui/react';
 
 export default {
-  title: "Components/Modal",
+  title: 'Components/Modal',
   component: Modal,
   argTypes: {
-    open: { control: "boolean" },
-    onClose: { action: "closed" },
+    open: { control: 'boolean' },
+    onClose: { action: 'closed' },
   },
-} as Meta;
+} as Meta<ModalProps>;
 
 const Template = (args) => <Modal {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  title: "Modal Title",
-  description: "Modal Description",
+  title: 'Modal Title',
+  description: 'Modal Description',
   open: true,
 };
 
 export const WithChildren = Template.bind({});
 WithChildren.args = {
-  title: "Modal Title",
-  description: "Modal Description",
+  title: 'Modal Title',
+  description: 'Modal Description',
   open: true,
   children: (
     <div>

@@ -1,8 +1,8 @@
-'use client';
-import React, { ReactNode } from 'react';
-import * as AlertDialog from '@radix-ui/react-alert-dialog';
-import { Button } from '../Button';
-import * as Styles from './styles';
+"use client";
+import React, { ReactNode } from "react";
+import * as AlertDialog from "@radix-ui/react-alert-dialog";
+import { Button } from "../Button";
+import * as Styles from "./styles";
 
 export interface AlertProps {
   title: string;
@@ -40,8 +40,8 @@ export const Alert = ({
           </AlertDialog.Cancel>
           <AlertDialog.Action asChild>
             <Button
-              className={Styles.actionButton()}
-              text="Sim, desejo deletar o usuário"
+              intent="primary"
+              text="Sim, desejo deletar!"
               onClick={onDelete}
             ></Button>
           </AlertDialog.Action>

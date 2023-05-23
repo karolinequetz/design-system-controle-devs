@@ -10,7 +10,7 @@ export interface AlertProps {
   open: boolean;
   onClose: () => void;
   onDelete: () => void;
-  elementAlert?: HTMLElement;
+  elementAlert?: HTMLElement | null;
 }
 
 export const Alert = ({
@@ -23,7 +23,6 @@ export const Alert = ({
 }: AlertProps) => (
   <AlertDialog.Root open={open} onOpenChange={onClose}>
     <AlertDialog.Portal container={elementAlert}>
-      <AlertDialog.Overlay className={Styles.overlay()} />
       <AlertDialog.Content className={Styles.content()}>
         <AlertDialog.Title className={Styles.title()}>
           {title}

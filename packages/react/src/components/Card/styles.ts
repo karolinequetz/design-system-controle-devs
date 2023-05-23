@@ -5,18 +5,18 @@ export const container = cva(
 );
 export const actions = cva('flex justify-end pb-4');
 export const EditAndDeleteButtons = cva(
-  ' hover:text-purple-600 text-primary-purple dark:text-blue-700 dark:hover:text-blue-600 font-semibold p-1 ',
+  ' hover:text-purple-600 text-primary dark:text-blue-700 dark:hover:text-blue-600 font-semibold p-1 ',
 );
 
 export const EditAndDeleteIcons = cva('w-5 h-5 inline-block');
 
 export const imageContainer = cva(
-  ' mx-auto h-32 w-32 rounded-full object-cover border-2 p-1 border-purple-700 dark:border-blue-700',
+  ' mx-auto h-32 w-32 rounded-full object-cover border-2 p-1 border-primary dark:border-blue-700',
 );
 
 export const imageContent = cva('h-full w-full rounded-full border-white');
 export const title = cva(
-  'text-center text-purple-700 dark:text-blue-700 font-bold text-xl mb-2 pt-4',
+  'text-center text-primary dark:text-blue-700 font-bold text-xl mb-2 pt-4',
 );
 export const children = cva(
   'text-gray-700 dark:text-gray-200 text-center text-base',

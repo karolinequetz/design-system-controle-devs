@@ -1,7 +1,7 @@
-"use client";
-import React, { ReactNode } from "react";
-import * as AlertDialog from "@radix-ui/react-alert-dialog";
-import * as Styles from "./styles";
+'use client';
+import React, { ReactNode } from 'react';
+import * as AlertDialog from '@radix-ui/react-alert-dialog';
+import * as Styles from './styles';
 
 interface Props {
   title: string;

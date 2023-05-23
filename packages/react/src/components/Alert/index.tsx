@@ -1,16 +1,24 @@
-"use client";
-import React, { ReactNode } from "react";
-import * as AlertDialog from "@radix-ui/react-alert-dialog";
-import * as Styles from "./styles";
+'use client';
+import React, { ReactNode } from 'react';
+import * as AlertDialog from '@radix-ui/react-alert-dialog';
+import { Button } from '../Button';
+import * as Styles from './styles';
 
-interface Props {
+export interface AlertProps {
   title: string;
   children: ReactNode;
   open: boolean;
   onClose: () => void;
+  onDelete: () => void;
 }
 
-const Alert = ({ title, children, open, onClose }: Props) => (
+export const Alert = ({
+  title,
+  children,
+  open,
+  onClose,
+  onDelete,
+}: AlertProps) => (
   <AlertDialog.Root open={open} onOpenChange={onClose}>
     <AlertDialog.Portal>
       <AlertDialog.Overlay className={Styles.overlay()} />
@@ -21,19 +29,24 @@ const Alert = ({ title, children, open, onClose }: Props) => (
         <AlertDialog.Description className={Styles.description()}>
           {children}
         </AlertDialog.Description>
-        <div className={Styles.buttonDiv()}>
+        <div className={Styles.buttonContent()}>
           <AlertDialog.Cancel asChild>
-            <button className={Styles.cancelButton()}>Cancelar</button>
+            <Button
+              intent="secondary"
+              size="small"
+              text="Cancelar"
+              onClick={onClose}
+            ></Button>
           </AlertDialog.Cancel>
           <AlertDialog.Action asChild>
-            <button className={Styles.actionButton()}>
-              Sim, desejo deletar o usuário
-            </button>
+            <Button
+              className={Styles.actionButton()}
+              text="Sim, desejo deletar o usuário"
+              onClick={onDelete}
+            ></Button>
           </AlertDialog.Action>
         </div>
       </AlertDialog.Content>
     </AlertDialog.Portal>
   </AlertDialog.Root>
 );
-
-export default Alert;

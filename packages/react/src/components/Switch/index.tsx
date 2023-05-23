@@ -1,7 +1,7 @@
-"use client";
-import React from "react";
-import * as SwitchUI from "@radix-ui/react-switch";
-import * as Styles from "./styles";
+'use client';
+import React from 'react';
+import * as SwitchUI from '@radix-ui/react-switch';
+import * as Styles from './styles';
 
 interface Props {
   label: string;

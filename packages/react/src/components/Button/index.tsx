@@ -1,6 +1,6 @@
-import React from "react";
-import { ButtonProps } from "./styles";
-import * as Styles from "./styles";
+import React from 'react';
+import { ButtonProps } from './styles';
+import * as Styles from './styles';
 
 export const Button = ({
   text,
@@ -23,3 +23,5 @@ export const Button = ({
     </button>
   );
 };
+
+export type { ButtonProps };

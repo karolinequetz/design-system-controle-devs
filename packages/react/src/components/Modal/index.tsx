@@ -1,9 +1,9 @@
-"use client";
-import React, { ReactNode } from "react";
-import * as Dialog from "@radix-ui/react-dialog";
-import { Cross2Icon } from "@radix-ui/react-icons";
+'use client';
+import React, { ReactNode } from 'react';
+import * as Dialog from '@radix-ui/react-dialog';
+import { Cross2Icon } from '@radix-ui/react-icons';
 
-import * as Styles from "./styles";
+import * as Styles from './styles';
 
 interface Props {
   title: string;

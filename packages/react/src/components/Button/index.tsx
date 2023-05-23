@@ -23,3 +23,5 @@ export const Button = ({
     </button>
   );
 };
+
+export type { ButtonProps };

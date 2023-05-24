@@ -2,10 +2,36 @@
 import React from 'react';
 import { DotsVerticalIcon } from '@radix-ui/react-icons';
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu';
+
+import {
+  DropdownContentProps,
+  DropdownItemProps,
+  DropdownPortalProps,
+  DropdownRootProps,
+  DropdownTriggerProps,
+} from '../../models/dropdown';
+
 import { Button } from '../Button';
+
 import * as Styles from './styles';
 
-export const Dropdown = () => {
+export interface DropdownProps {
+  elementDropdown?: HTMLElement;
+  root?: DropdownRootProps;
+  trigger?: DropdownTriggerProps;
+  portal?: DropdownPortalProps;
+  content?: DropdownContentProps;
+  item?: DropdownItemProps;
+}
+
+export const Dropdown = ({
+  elementDropdown,
+  root,
+  trigger,
+  portal,
+  content,
+  item,
+}: DropdownProps) => {
   return (
     <DropdownMenu.Root>
       <DropdownMenu.Trigger>
@@ -16,7 +42,7 @@ export const Dropdown = () => {
         />
       </DropdownMenu.Trigger>
 
-      <DropdownMenu.Portal>
+      <DropdownMenu.Portal container={elementDropdown}>
         <DropdownMenu.Content
           className={Styles.dropdownContent()}
           sideOffset={5}

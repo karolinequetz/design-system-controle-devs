@@ -12,5 +12,13 @@ export const Primary: StoryObj<AlertProps> = {
     children: "Deseja excluir permanentemente?",
     open: true,
     elementAlert: document.getElementById("storybook-root"),
+    firstButton: {
+      intent: "secondary",
+      size: "small",
+      text: "Cancelar",
+    },
+    secondButton: {
+      text: "Sim, desejo deletar!",
+    },
   },
 };

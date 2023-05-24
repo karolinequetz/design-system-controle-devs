@@ -4,13 +4,26 @@ import * as AlertDialog from "@radix-ui/react-alert-dialog";
 import { Button } from "../Button";
 import * as Styles from "./styles";
 
+interface ButtonProps {
+  intent?: "primary" | "secondary" | "menuButton" | "transparent";
+  size?: "small" | "medium";
+  text: string;
+}
+interface ContentProps {
+  onEscapeKeyDown?: () => void;
+  asChild: boolean;
+}
+
 export interface AlertProps {
-  title: string;
+  title: ReactNode | string;
   children: ReactNode;
   open: boolean;
   onClose: () => void;
   onDelete: () => void;
   elementAlert?: HTMLElement | null;
+  firstButton?: ButtonProps;
+  secondButton?: ButtonProps;
+  content?: ContentProps;
 }
 
 export const Alert = ({
@@ -19,11 +32,18 @@ export const Alert = ({
   open,
   onClose,
   onDelete,
+  content,
   elementAlert,
+  firstButton,
+  secondButton,
 }: AlertProps) => (
   <AlertDialog.Root open={open} onOpenChange={onClose}>
     <AlertDialog.Portal container={elementAlert}>
-      <AlertDialog.Content className={Styles.content()}>
+      <AlertDialog.Content
+        onEscapeKeyDown={content?.onEscapeKeyDown}
+        asChild={content?.asChild}
+        className={Styles.content()}
+      >
         <AlertDialog.Title className={Styles.title()}>
           {title}
         </AlertDialog.Title>
@@ -33,14 +53,13 @@ export const Alert = ({
         <div className={Styles.buttonContent()}>
           <AlertDialog.Cancel asChild>
             <Button
-              intent="secondary"
-              size="small"
-              text="Cancelar"
-              onClick={onClose}
+              intent={firstButton?.intent}
+              size={firstButton?.size}
+              text={firstButton?.text}
             ></Button>
           </AlertDialog.Cancel>
           <AlertDialog.Action asChild>
-            <Button text="Sim, desejo deletar!" onClick={onDelete}></Button>
+            <Button text={secondButton?.text} onClick={onDelete}></Button>
           </AlertDialog.Action>
         </div>
       </AlertDialog.Content>

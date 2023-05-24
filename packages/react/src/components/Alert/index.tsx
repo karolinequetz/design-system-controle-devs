@@ -11,7 +11,16 @@ interface ButtonProps {
 }
 interface ContentProps {
   onEscapeKeyDown?: () => void;
-  asChild: boolean;
+  forceMount?: true;
+}
+
+interface PortalProps {
+  elementAlert: () => HTMLElement | null;
+  forceMount?: true;
+}
+
+interface OverlayProps {
+  forceMount?: true;
 }
 
 export interface AlertProps {
@@ -20,10 +29,11 @@ export interface AlertProps {
   open: boolean;
   onClose: () => void;
   onDelete: () => void;
-  elementAlert?: HTMLElement | null;
   firstButton?: ButtonProps;
   secondButton?: ButtonProps;
   content?: ContentProps;
+  portal?: PortalProps;
+  overlay?: OverlayProps;
 }
 
 export const Alert = ({
@@ -33,15 +43,23 @@ export const Alert = ({
   onClose,
   onDelete,
   content,
-  elementAlert,
+  portal,
   firstButton,
   secondButton,
+  overlay,
 }: AlertProps) => (
   <AlertDialog.Root open={open} onOpenChange={onClose}>
-    <AlertDialog.Portal container={elementAlert}>
+    <AlertDialog.Portal
+      container={portal?.elementAlert()}
+      forceMount={portal?.forceMount}
+    >
+      <AlertDialog.Overlay
+        className={Styles.overlay()}
+        forceMount={overlay?.forceMount}
+      />
       <AlertDialog.Content
         onEscapeKeyDown={content?.onEscapeKeyDown}
-        asChild={content?.asChild}
+        forceMount={content?.forceMount}
         className={Styles.content()}
       >
         <AlertDialog.Title className={Styles.title()}>

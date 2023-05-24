@@ -11,7 +11,17 @@ export const Primary: StoryObj<AlertProps> = {
     title: "Atenção!",
     children: "Deseja excluir permanentemente?",
     open: true,
-    elementAlert: document.getElementById("storybook-root"),
+    portal: {
+      elementAlert: () => document.getElementById("storybook-root"),
+      forceMount: true,
+    },
+    overlay: {
+      forceMount: true,
+    },
+    content: {
+      forceMount: true,
+      onEscapeKeyDown: () => console.log("Esc"),
+    },
     firstButton: {
       intent: "secondary",
       size: "small",

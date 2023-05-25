@@ -1,8 +1,8 @@
-import "./styles/global.css";
+import './styles/global.css';
 
-export * from "./components/Button";
-export * from "./components/Modal";
-export * from "./components/Card";
+export * from './components/Button';
+export * from './components/Modal';
+export * from './components/Card';
 
-export * from "./components/Alert";
-export * from "./components/Checkbox";
+export * from './components/Alert';
+export * from './components/Checkbox';

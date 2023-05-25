@@ -5,10 +5,12 @@ export const container = cva(
 );
 export const actions = cva('flex justify-end pb-4');
 export const EditAndDeleteButtons = cva(
-  ' hover:text-purple-600 text-primary dark:text-blue-700 dark:hover:text-blue-600 font-semibold p-1 ',
+  '  dark:text-blue-700 dark:hover:text-blue-600 font-semibold p-1 ',
 );
 
-export const EditAndDeleteIcons = cva('w-5 h-5 inline-block');
+export const EditAndDeleteIcons = cva(
+  'w-5 h-5 inline-block hover:text-purple-600 text-primary ',
+);
 
 export const imageContainer = cva(
   ' mx-auto h-32 w-32 rounded-full object-cover border-2 p-1 border-primary dark:border-blue-700',

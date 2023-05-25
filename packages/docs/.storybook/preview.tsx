@@ -1,10 +1,9 @@
-import React from 'react';
+import React from "react";
 
-import { Preview } from '@storybook/react';
-import  {themes} from '@storybook/theming';
+import { Preview } from "@storybook/react";
+import { themes } from "@storybook/theming";
 
-import "@controle-devs-ui/react/dist/index.css"
-
+import "@controle-devs-ui/react/dist/index.css";
 
 const preview: Preview = {
   parameters: {
@@ -15,9 +14,9 @@ const preview: Preview = {
         date: /Date$/,
       },
     },
-      docs:{
-      theme:themes.dark
-    }, 
+    docs: {
+      theme: themes.dark,
+    },
   },
   globalTypes: {
     darkMode: {
@@ -26,7 +25,7 @@ const preview: Preview = {
   },
   decorators: [
     (Story) => (
-      <div className="bg-white dark:bg-gray-900">
+      <div className="h-full w-full bg-white dark:bg-gray-900">
         <Story />
       </div>
     ),

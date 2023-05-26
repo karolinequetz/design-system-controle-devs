@@ -7,7 +7,7 @@ export default {
   component: Select,
   decorators: [
     (Story) => (
-      <div className="w-64">
+      <div className="absolute flex flex-col bg-opacity-3 bg-orange-400 w-64 left-0 top-10 bottom-0 border-l border-green border-opacity-10 overflow-x-hidden overflow-y-auto">
         <Story />
       </div>
     ),

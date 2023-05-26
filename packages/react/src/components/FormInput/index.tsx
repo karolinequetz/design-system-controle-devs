@@ -5,22 +5,18 @@ import { LabelRootProps } from '../../models/input';
 
 import * as Styles from './styles';
 
-export interface InputProps {
+export interface FormInputProps {
   label: string;
   labelRoot?: LabelRootProps;
 }
 
-export const Input = ({ label, labelRoot }: InputProps) => {
+export const FormInput = ({ label, labelRoot }: FormInputProps) => {
   return (
     <div className={Styles.div()}>
-      <Label.Root
-        className={Styles.label()}
-        asChild={labelRoot?.asChild}
-        htmlFor={labelRoot?.htmlFor}
-      >
+      <Label.Root className={Styles.label()} {...labelRoot}>
         {label}
       </Label.Root>
-      <input className={Styles.input()} type='text' />
+      <input className={Styles.input()} type="text" />
     </div>
   );
 };

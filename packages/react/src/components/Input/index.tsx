@@ -10,11 +10,17 @@ export interface InputProps {
   labelRoot?: LabelRootProps;
 }
 
-export const Input = ({ label }: InputProps) => {
+export const Input = ({ label, labelRoot }: InputProps) => {
   return (
     <div className={Styles.div()}>
-      <Label.Root className={Styles.label()}>{label}</Label.Root>
-      <input className={Styles.input()} type="text" />
+      <Label.Root
+        className={Styles.label()}
+        asChild={labelRoot?.asChild}
+        htmlFor={labelRoot?.htmlFor}
+      >
+        {label}
+      </Label.Root>
+      <input className={Styles.input()} type='text' />
     </div>
   );
 };

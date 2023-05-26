@@ -33,11 +33,15 @@ export const Dropdown = ({
   item,
 }: DropdownProps) => {
   return (
-    <DropdownMenu.Root>
+    <DropdownMenu.Root
+      defaultOpen={root?.defaultOpen}
+      onOpenChange={root?.onOpenChange}
+      open={root?.open}
+    >
       <DropdownMenu.Trigger>
         <Button
           icon={<DotsVerticalIcon />}
-          aria-label="Customise options"
+          aria-label='Customise options'
           className={Styles.button()}
         />
       </DropdownMenu.Trigger>
@@ -46,11 +50,31 @@ export const Dropdown = ({
         <DropdownMenu.Content
           className={Styles.dropdownContent()}
           sideOffset={5}
+          asChild={content?.asChild}
+          loop={content?.loop}
+          onCloseAutoFocus={content?.onCloseAutoFocus}
+          onEscapeKeyDown={content?.onEscapeKeyDown}
+          side={content?.side}
+          align={content?.align}
+          alignOffset={content?.alignOffset}
+          hideWhenDetached={content?.hideWhenDetached}
         >
-          <DropdownMenu.Item className={Styles.dropdownItem()}>
+          <DropdownMenu.Item
+            className={Styles.dropdownItem()}
+            asChild={item?.asChild}
+            disabled={item?.disabled}
+            onSelect={item?.onSelect}
+            textValue={item?.textValue}
+          >
             Editar
           </DropdownMenu.Item>
-          <DropdownMenu.Item className={Styles.dropdownItem()}>
+          <DropdownMenu.Item
+            className={Styles.dropdownItem()}
+            asChild={item?.asChild}
+            disabled={item?.disabled}
+            onSelect={item?.onSelect}
+            textValue={item?.textValue}
+          >
             Excluir
           </DropdownMenu.Item>
         </DropdownMenu.Content>

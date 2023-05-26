@@ -20,7 +20,6 @@ export interface DropdownContentProps {
   onEscapeKeyDown: () => void;
   onPointerDownOutside: () => void;
   onFocusOutSide: () => void;
-  forceMount: boolean;
   side: 'top' | 'right' | 'bottom' | 'left';
   sideOffset: number;
   align: 'start' | 'center' | 'end';

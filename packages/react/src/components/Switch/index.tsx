@@ -12,9 +12,7 @@ export interface SwitchProps {
 
 export const Switch = ({ label, root, thumb }: SwitchProps) => (
   <div className={Styles.container()}>
-    <label className={Styles.label()} htmlFor="airplane-mode">
-      {label}
-    </label>
+    <label className={Styles.label()}>{label}</label>
     <SwitchUI.Root
       className={Styles.switchRoot()}
       asChild={root.asChild}
@@ -25,7 +23,6 @@ export const Switch = ({ label, root, thumb }: SwitchProps) => (
       required={root.required}
       name={root.name}
       value={root.value}
-      id="airplane-mode"
     >
       <SwitchUI.Thumb
         className={Styles.switchThumb()}

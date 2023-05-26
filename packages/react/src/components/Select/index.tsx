@@ -14,58 +14,101 @@ interface OptionsProps {
   description: string;
 }
 
+interface RootProps {
+  defaultValue?: string;
+  value?: string;
+  onValueChange?: () => void;
+  defaultOpen?: boolean;
+  open?: boolean;
+  onOpenChange?: () => void;
+  name?: string;
+  disabled?: boolean;
+  required?: boolean;
+}
+
+interface ItemProps {
+  disabled?: boolean;
+  textValue?: string;
+}
+
+interface PortalProps {
+  container: () => HTMLElement;
+}
+
+interface ContentProps {
+  onCloseAutoFocus?: () => void;
+  onEscapeKeyDown?: () => void;
+  onPointerDownOutside?: () => void;
+  position?: "item-aligned" | "popper";
+  side?: "top" | "right" | "bottom" | "left";
+  sideOffset?: number;
+  align?: "start" | "center" | "end";
+  alignOffset?: number;
+  avoidCollisions?: boolean;
+  collisionBoundary?: Element | null | Array<Element | null>;
+  collisionPadding?: number;
+  arrowPadding?: number;
+  sticky?: "partial" | "always";
+  hideWhenDetached?: boolean;
+}
+
 export interface SelectProps {
   options: OptionsProps[];
   placeholder?: string;
   descriptiveTextForAccessibility?: string;
+  portal?: PortalProps;
+  root?: RootProps;
+  content?: ContentProps;
+  item?: ItemProps;
 }
 
 export const Select = ({
   options,
   placeholder,
   descriptiveTextForAccessibility,
+  portal,
+  root,
+  content,
+  item,
 }: SelectProps) => (
-  <div className="absolute flex flex-col bg-opacity-3 bg-orange-400 w-64 left-0 top-10 bottom-0 border-l border-green border-opacity-10 overflow-x-hidden overflow-y-auto">
-    <SelectPrimitive.Root>
-      <SelectPrimitive.Trigger
-        aria-label={descriptiveTextForAccessibility}
-        className={Styles.selectTrigger()}
-      >
-        <SelectPrimitive.Value placeholder={placeholder ?? "Selecione..."} />
-        <SelectPrimitive.Icon className={Styles.downArrowIcon()}>
+  <SelectPrimitive.Root {...root}>
+    <SelectPrimitive.Trigger
+      aria-label={descriptiveTextForAccessibility}
+      className={Styles.selectTrigger()}
+    >
+      <SelectPrimitive.Value placeholder={placeholder ?? "Selecione..."} />
+      <SelectPrimitive.Icon className={Styles.downArrowIcon()}>
+        <ChevronDownIcon />
+      </SelectPrimitive.Icon>
+    </SelectPrimitive.Trigger>
+    <SelectPrimitive.Portal container={portal?.container()}>
+      <SelectPrimitive.Content {...content} className={Styles.selectContent()}>
+        <SelectPrimitive.ScrollUpButton className={Styles.upArrowIcon()}>
+          <ChevronUpIcon />
+        </SelectPrimitive.ScrollUpButton>
+        <SelectPrimitive.Viewport className={Styles.viewport()}>
+          <SelectPrimitive.Group>
+            {options.map((option) => (
+              <SelectPrimitive.Item
+                {...item}
+                key={option.id}
+                value={option.description}
+                className={Styles.selectItem()}
+              >
+                <SelectPrimitive.ItemText>
+                  {option.description}
+                </SelectPrimitive.ItemText>
+                <SelectPrimitive.ItemIndicator className={Styles.checkItem()}>
+                  <CheckIcon />
+                </SelectPrimitive.ItemIndicator>
+              </SelectPrimitive.Item>
+            ))}
+          </SelectPrimitive.Group>
+        </SelectPrimitive.Viewport>
+        <SelectPrimitive.ScrollDownButton className={Styles.scrollDownButton()}>
           <ChevronDownIcon />
-        </SelectPrimitive.Icon>
-      </SelectPrimitive.Trigger>
-      <SelectPrimitive.Portal>
-        <SelectPrimitive.Content className={Styles.selectContent()}>
-          <SelectPrimitive.ScrollUpButton className={Styles.upArrowIcon()}>
-            <ChevronUpIcon />
-          </SelectPrimitive.ScrollUpButton>
-          <SelectPrimitive.Viewport className="p-5">
-            <SelectPrimitive.Group>
-              {options.map((option) => (
-                <SelectPrimitive.Item
-                  key={option.id}
-                  value={option.description}
-                  className={Styles.selectItem()}
-                >
-                  <SelectPrimitive.ItemText>
-                    {option.description}
-                  </SelectPrimitive.ItemText>
-                  <SelectPrimitive.ItemIndicator className={Styles.checkItem()}>
-                    <CheckIcon />
-                  </SelectPrimitive.ItemIndicator>
-                </SelectPrimitive.Item>
-              ))}
-            </SelectPrimitive.Group>
-          </SelectPrimitive.Viewport>
-          <SelectPrimitive.ScrollDownButton
-            className={Styles.scrollDownButton()}
-          >
-            <ChevronDownIcon />
-          </SelectPrimitive.ScrollDownButton>
-        </SelectPrimitive.Content>
-      </SelectPrimitive.Portal>
-    </SelectPrimitive.Root>
-  </div>
+        </SelectPrimitive.ScrollDownButton>
+      </SelectPrimitive.Content>
+    </SelectPrimitive.Portal>
+  </SelectPrimitive.Root>
 );

@@ -1,9 +1,9 @@
-'use client';
-import React, { ReactNode } from 'react';
-import * as CheckboxInput from '@radix-ui/react-checkbox';
-import { CheckIcon } from '@radix-ui/react-icons';
+"use client";
+import React, { ReactNode } from "react";
+import * as CheckboxInput from "@radix-ui/react-checkbox";
+import { CheckIcon } from "@radix-ui/react-icons";
 
-import * as Styles from './styles';
+import * as Styles from "./styles";
 
 interface CheckboxRoot {
   defaultChecked?: boolean;
@@ -24,19 +24,10 @@ export interface CheckboxProps {
   indicator: CheckboxIndicator;
 }
 export const Checkbox = ({ text, root, indicator }: CheckboxProps) => (
-  <CheckboxInput.Root
-    onCheckedChange={root.onCheckedChange}
-    defaultChecked={root.defaultChecked}
-    checked={root.checked}
-    disabled={root.disabled}
-    required={root.required}
-    name={root.name}
-    value={root.value}
-    className={Styles.checkboxRoot()}
-  >
+  <CheckboxInput.Root {...root} className={Styles.checkboxRoot()}>
     <div className={Styles.checkboxContent()}>
       <CheckboxInput.Indicator
-        asChild={indicator?.asChild}
+        {...indicator}
         className={Styles.checkboxContent()}
       >
         <CheckIcon className={Styles.checkboxIcon()} />

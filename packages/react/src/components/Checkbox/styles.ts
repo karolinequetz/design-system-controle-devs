@@ -1,9 +1,17 @@
 import { cva } from 'class-variance-authority';
 
-export const checkboxRoot = cva('flex items-center  focus:outline-none');
+export const checkboxRoot = cva('flex items-center  focus:outline-none ');
 
-export const inputDiv = cva(
-  'w-4 h-4 text-blue-600 bg-gray-300 border-white rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600',
+export const checkboxContent = cva(
+  'flex w-5 h-5 items-center justify-center rounded bg-gray-100 dark:border-blue-700 border-2 border-primary  radix-disabled:bg-blue-700 ',
 );
 
-export const span = cva('ml-2 text-sm text-gray-900 dark:text-gray-300');
+export const checkboxIcon = cva(
+  'h-5 w-5 bg-primary  text-gray-100 dark:bg-blue-700',
+);
+
+export const checkboxDisabled = cva('bg-yellow-600 text-gray-700 ');
+
+export const span = cva(
+  'ml-2 select-none text-sm font-medium text-gray-700 dark:text-gray-200',
+);

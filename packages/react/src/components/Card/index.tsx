@@ -6,7 +6,7 @@ import { Button } from '../Button';
 import * as Styles from './styles';
 
 export interface CardProps {
-  title: string;
+  title: ReactNode | string;
   children: ReactNode;
   image: string;
   skills: string[];

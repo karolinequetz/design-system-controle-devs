@@ -7,3 +7,5 @@ export * from './components/Alert';
 export * from './components/Dropdown';
 export * from './components/Switch';
 export * from './components/Checkbox';
+export * from './components/FormInput';
+export * from './components/Input';

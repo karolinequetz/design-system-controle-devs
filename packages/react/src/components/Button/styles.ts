@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, ReactElement, SVGProps } from 'react';
+import { ButtonHTMLAttributes, ReactElement, ReactNode, SVGProps } from 'react';
 import { cva, VariantProps } from 'class-variance-authority';
 
 export const button = cva(
@@ -35,7 +35,7 @@ export const buttonIcon = cva(
 export interface ButtonProps
   extends ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof button> {
-  text?: string;
+  text?: string | ReactNode;
   imageSrc?: string;
   alt?: string;
   icon?: ReactElement<SVGProps<SVGSVGElement>>;

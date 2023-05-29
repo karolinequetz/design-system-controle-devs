@@ -3,6 +3,8 @@ import * as Label from '@radix-ui/react-label';
 
 import { LabelRootProps } from '../../models/input';
 
+import { Input } from '../Input';
+
 import * as Styles from './styles';
 
 export interface FormInputProps {
@@ -16,7 +18,7 @@ export const FormInput = ({ label, labelRoot }: FormInputProps) => {
       <Label.Root className={Styles.label()} {...labelRoot}>
         {label}
       </Label.Root>
-      <input className={Styles.input()} type="text" />
+      <Input />
     </div>
   );
 };

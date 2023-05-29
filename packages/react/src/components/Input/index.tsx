@@ -1,19 +1,9 @@
-'use client';
-import React from 'react';
-import * as Label from '@radix-ui/react-label';
+import React, { InputHTMLAttributes } from 'react';
+
 import * as Styles from './styles';
 
-interface Props {
-  label: string;
-}
-
-const Input = ({ label }: Props) => (
-  <div className={Styles.div()}>
-    <Label.Root className={Styles.label()} htmlFor="firstName">
-      {label}
-    </Label.Root>
-    <input className={Styles.input()} type="text" id="firstName" />
-  </div>
-);
-
-export default Input;
+export const Input: React.FC<InputHTMLAttributes<HTMLInputElement>> = ({
+  ...props
+}) => {
+  return <input {...props} className={Styles.input()} />;
+};

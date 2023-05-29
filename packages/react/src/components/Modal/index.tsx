@@ -8,7 +8,7 @@ import { Button } from '../Button';
 import * as Styles from './styles';
 
 export interface ModalProps {
-  title: string;
+  title: ReactNode | string;
   description: string;
   children?: ReactNode;
   open: boolean;
@@ -34,7 +34,7 @@ export const Modal = ({
           {children}
           <div className={Styles.closeDiv()}>
             <Dialog.Close asChild>
-              <Button text="Voltar" size="small" onClick={onClose} />
+              <Button text={title} size="small" onClick={onClose} />
             </Dialog.Close>
           </div>
           <Dialog.Close asChild>

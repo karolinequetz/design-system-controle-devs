@@ -33,7 +33,7 @@ export const Dropdown = ({
   item,
 }: DropdownProps) => {
   return (
-    <DropdownMenu.Root>
+    <DropdownMenu.Root {...root}>
       <DropdownMenu.Trigger>
         <Button
           icon={<DotsVerticalIcon />}
@@ -46,11 +46,12 @@ export const Dropdown = ({
         <DropdownMenu.Content
           className={Styles.dropdownContent()}
           sideOffset={5}
+          {...content}
         >
-          <DropdownMenu.Item className={Styles.dropdownItem()}>
+          <DropdownMenu.Item className={Styles.dropdownItem()} {...item}>
             Editar
           </DropdownMenu.Item>
-          <DropdownMenu.Item className={Styles.dropdownItem()}>
+          <DropdownMenu.Item className={Styles.dropdownItem()} {...item}>
             Excluir
           </DropdownMenu.Item>
         </DropdownMenu.Content>

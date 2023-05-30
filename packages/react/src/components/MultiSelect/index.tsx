@@ -1,7 +1,7 @@
-import React from 'react';
-import Select, { MultiValue } from 'react-select';
-import { Options } from '../../models/select';
-import * as Styles from './styles';
+import React from "react";
+import Select, { MultiValue, components, OptionProps } from "react-select";
+import { Options } from "../../models/select";
+import * as Styles from "./styles";
 
 interface SelectProps {
   options: Options[];
@@ -17,7 +17,17 @@ interface SelectProps {
 export interface MultiSelectProps {
   setState: (value: string[]) => void;
   select: SelectProps;
+  checkbox?: boolean;
 }
+
+const InputOption = ({ children, ...props }: OptionProps) => {
+  return (
+    <components.Option {...props}>
+      <input type="checkbox" checked={props.isSelected} />
+      {children}
+    </components.Option>
+  );
+};
 
 export const MultiSelect = ({ select, setState }: MultiSelectProps) => {
   const onChange = (option: MultiValue<Options>) => {
@@ -34,6 +44,9 @@ export const MultiSelect = ({ select, setState }: MultiSelectProps) => {
         multiValueLabel: () => Styles.label(),
         multiValueRemove: () => Styles.close(),
         option: () => Styles.option(),
+      }}
+      components={{
+        Option: InputOption,
       }}
     />
   );

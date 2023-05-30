@@ -16,7 +16,12 @@ const skills = [
 
 export const Primary: StoryObj<MultiSelectProps> = {
   args: {
-    options: skills,
+    select: {
+      options: skills,
+      placeholder: 'Selecione as opções',
+      closeMenuOnSelect: false,
+      hideSelectedOptions: false,
+    },
     setState: () => console.log('itens selecionados'),
   },
 };

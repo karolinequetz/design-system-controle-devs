@@ -1,7 +1,8 @@
-import React from "react";
-import Select, { MultiValue, components, OptionProps } from "react-select";
-import { Options } from "../../models/select";
-import * as Styles from "./styles";
+import React from 'react';
+import Select, { MultiValue, components, OptionProps } from 'react-select';
+import { Options } from '../../models/select';
+import * as Styles from './styles';
+import { Checkbox } from '../Checkbox';
 
 interface SelectProps {
   options: Options[];
@@ -23,7 +24,7 @@ export interface MultiSelectProps {
 const InputOption = ({ children, ...props }: OptionProps) => {
   return (
     <components.Option {...props}>
-      <input type="checkbox" checked={props.isSelected} />
+      <Checkbox root={{ checked: props.isSelected }} />
       {children}
     </components.Option>
   );

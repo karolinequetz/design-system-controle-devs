@@ -19,9 +19,9 @@ interface CheckboxIndicator {
   asChild?: boolean;
 }
 export interface CheckboxProps {
-  text: string | ReactNode;
-  root: CheckboxRoot;
-  indicator: CheckboxIndicator;
+  text?: string | ReactNode;
+  root?: CheckboxRoot;
+  indicator?: CheckboxIndicator;
 }
 export const Checkbox = ({ text, root, indicator }: CheckboxProps) => (
   <CheckboxInput.Root {...root} className={Styles.checkboxRoot()}>

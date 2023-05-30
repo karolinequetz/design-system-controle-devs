@@ -24,8 +24,7 @@ export interface MultiSelectProps {
 const InputOption = ({ children, ...props }: OptionProps) => {
   return (
     <components.Option {...props}>
-      <Checkbox root={{ checked: props.isSelected }} />
-      {children}
+      <Checkbox root={{ checked: props.isSelected }} text={children} />
     </components.Option>
   );
 };

@@ -18,8 +18,13 @@ interface CheckboxRoot {
 interface CheckboxIndicator {
   asChild?: boolean;
 }
+interface TextProps {
+  label?: string | ReactNode;
+  classText?: string;
+}
 export interface CheckboxProps {
-  text?: string | ReactNode;
+  text?: TextProps;
+
   root?: CheckboxRoot;
   indicator?: CheckboxIndicator;
 }
@@ -33,6 +38,6 @@ export const Checkbox = ({ text, root, indicator }: CheckboxProps) => (
         <CheckIcon className={Styles.checkboxIcon()} />
       </CheckboxInput.Indicator>
     </div>
-    <span className={Styles.span()}>{text}</span>
+    <span className={text?.classText || Styles.span()}>{text?.label}</span>
   </CheckboxInput.Root>
 );

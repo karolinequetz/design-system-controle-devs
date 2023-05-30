@@ -19,6 +19,19 @@ export const Primary: StoryObj<MultiSelectProps> = {
     select: {
       options: skills,
       placeholder: 'Selecione as opções',
+      closeMenuOnSelect: true,
+      hideSelectedOptions: true,
+    },
+    setState: () => console.log('itens selecionados'),
+  },
+};
+
+export const Checkbox: StoryObj<MultiSelectProps> = {
+  args: {
+    checkbox: true,
+    select: {
+      options: skills,
+      placeholder: 'Selecione as opções',
       closeMenuOnSelect: false,
       hideSelectedOptions: false,
     },

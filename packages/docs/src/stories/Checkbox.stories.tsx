@@ -8,7 +8,7 @@ export default {
 
 export const Default: StoryObj<CheckboxProps> = {
   args: {
-    text: 'checkbox controle de devs',
+    text: { label: 'checkbox controle de devs' },
     root: {},
     indicator: {
       asChild: false,
@@ -18,7 +18,7 @@ export const Default: StoryObj<CheckboxProps> = {
 
 export const Disabled: StoryObj<CheckboxProps> = {
   args: {
-    text: 'checkbox desabilitado',
+    text: { label: 'checkbox desabilitado' },
     root: {
       defaultChecked: true,
       disabled: true,

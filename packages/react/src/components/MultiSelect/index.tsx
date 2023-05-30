@@ -24,12 +24,19 @@ export interface MultiSelectProps {
 const InputOption = ({ children, ...props }: OptionProps) => {
   return (
     <components.Option {...props}>
-      <Checkbox root={{ checked: props.isSelected }} text={children} />
+      <Checkbox
+        root={{ checked: props.isSelected }}
+        text={{ label: children, classText: Styles.text() }}
+      />
     </components.Option>
   );
 };
 
-export const MultiSelect = ({ select, setState }: MultiSelectProps) => {
+export const MultiSelect = ({
+  select,
+  setState,
+  checkbox,
+}: MultiSelectProps) => {
   const onChange = (option: MultiValue<Options>) => {
     setState((option as Options[]).map((item: Options) => item.value));
   };
@@ -45,9 +52,13 @@ export const MultiSelect = ({ select, setState }: MultiSelectProps) => {
         multiValueRemove: () => Styles.close(),
         option: () => Styles.option(),
       }}
-      components={{
-        Option: InputOption,
-      }}
+      components={
+        checkbox
+          ? {
+              Option: InputOption,
+            }
+          : undefined
+      }
     />
   );
 };

@@ -1,9 +1,9 @@
-import React from "react";
-import type { StoryObj, Meta } from "@storybook/react";
-import { Select, SelectProps } from "@controle-devs-ui/react";
+import React from 'react';
+import type { StoryObj, Meta } from '@storybook/react';
+import { Select, SelectProps } from '@controle-devs-ui/react';
 
 export default {
-  title: "Components/Select",
+  title: 'Components/Select',
   component: Select,
   decorators: [
     (Story) => (
@@ -19,31 +19,31 @@ export default {
 
 export const Primary: StoryObj<SelectProps> = {
   args: {
-    placeholder: "Selecione as hard skills ...",
-    descriptiveTextForAccessibility: "select com opções de hard skills ",
+    placeholder: 'Selecione as hard skills ...',
+    descriptiveTextForAccessibility: 'select com opções de hard skills ',
     portal: {
-      container: () => document.getElementById("storybook-root"),
+      container: () => document.getElementById('storybook-root'),
     },
     options: [
-      { id: "1", description: "React Js" },
-      { id: "2", description: "React Native" },
-      { id: "3", description: "Angular" },
-      { id: "4", description: "C#" },
+      { value: '1', label: 'React Js' },
+      { value: '2', label: 'React Native' },
+      { value: '3', label: 'Angular' },
+      { value: '4', label: 'C#' },
     ],
   },
 };
 
 export const Disabled: StoryObj<SelectProps> = {
   args: {
-    placeholder: "Selecione as hard skills ...",
-    descriptiveTextForAccessibility: "select com opções de hard skills ",
+    placeholder: 'Selecione as hard skills ...',
+    descriptiveTextForAccessibility: 'select com opções de hard skills ',
     portal: {
-      container: () => document.getElementById("storybook-root"),
+      container: () => document.getElementById('storybook-root'),
     },
     content: {
-      position: "popper",
+      position: 'popper',
       sideOffset: 5,
-      align: "center",
+      align: 'center',
       avoidCollisions: true,
       hideWhenDetached: true,
     },
@@ -51,10 +51,10 @@ export const Disabled: StoryObj<SelectProps> = {
       disabled: true,
     },
     options: [
-      { id: "1", description: "React Js" },
-      { id: "2", description: "React Native" },
-      { id: "3", description: "Angular" },
-      { id: "4", description: "C#" },
+      { value: '1', label: 'React Js' },
+      { value: '2', label: 'React Native' },
+      { value: '3', label: 'Angular' },
+      { value: '4', label: 'C#' },
     ],
   },
 };

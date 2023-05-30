@@ -1,9 +1,9 @@
-"use client";
-import React, { ReactNode } from "react";
-import * as CheckboxInput from "@radix-ui/react-checkbox";
-import { CheckIcon } from "@radix-ui/react-icons";
+'use client';
+import React, { ReactNode } from 'react';
+import * as CheckboxInput from '@radix-ui/react-checkbox';
+import { CheckIcon } from '@radix-ui/react-icons';
 
-import * as Styles from "./styles";
+import * as Styles from './styles';
 
 interface CheckboxRoot {
   defaultChecked?: boolean;

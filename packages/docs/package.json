@@ -39,6 +39,7 @@
     "@controle-devs-ui/tokens": "*",
     "@controle-devs-ui/ts-config": "*",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-select": "^5.7.3"
   }
 }

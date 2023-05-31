@@ -1,12 +1,12 @@
-"use client";
-import React, { ReactNode } from "react";
-import * as AlertDialog from "@radix-ui/react-alert-dialog";
-import { Button } from "../Button";
-import * as Styles from "./styles";
+'use client';
+import React, { ReactNode } from 'react';
+import * as AlertDialog from '@radix-ui/react-alert-dialog';
+import { Button } from '../Button';
+import * as Styles from './styles';
 
 interface ButtonProps {
-  intent?: "primary" | "secondary" | "menuButton" | "transparent";
-  size?: "small" | "medium";
+  intent?: 'primary' | 'secondary' | 'menuButton' | 'transparent';
+  size?: 'small' | 'medium';
   text: string;
 }
 interface ContentProps {

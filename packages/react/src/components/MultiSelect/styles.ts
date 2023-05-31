@@ -8,4 +8,8 @@ export const close = cva(
 export const option = cva(
   ' hover:bg-primary dark:hover:bg-blue-700  hover:text-white dark:hover:text-white  ',
 );
+export const selectedOption = cva(
+  ' bg-primary dark:bg-blue-700 hover:bg-primary dark:hover:bg-blue-700  hover:text-white dark:hover:text-white  ',
+);
+
 export const text = cva('ml-2 select-none text-sm font-medium');

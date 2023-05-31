@@ -9,6 +9,8 @@ export default {
 export const Default: StoryObj<ImageUploadProps> = {
   args: {
     onChange: () => console.log('File Uploaded'),
-    uploadText: 'Selecione uma imagem',
+    accept: 'image/*',
+    buttonText: 'Selecione uma imagem',
+    onRemove: () => console.log('File deleted'),
   },
 };

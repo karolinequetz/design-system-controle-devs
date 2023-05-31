@@ -10,12 +10,12 @@ export interface ImageUploadProps {
   accept?: string;
 }
 
-export const ImageUpload: React.FC<ImageUploadProps> = ({
+export const ImageUpload = ({
   onChange,
   onRemove,
   buttonText = 'Selecione uma imagem',
   accept = 'image/*',
-}) => {
+}: ImageUploadProps) => {
   const [selectedImage, setSelectedImage] = useState<File | null>(null);
   const [isLoading, setIsLoading] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
@@ -52,11 +52,11 @@ export const ImageUpload: React.FC<ImageUploadProps> = ({
   return (
     <div className={Styles.uploadContainer()}>
       {!selectedImage && (
-        <label htmlFor="image-upload" className={Styles.buttonTextLabel()}>
+        <label htmlFor='image-upload' className={Styles.buttonTextLabel()}>
           <span className={Styles.buttonText()}>{buttonText}</span>
           <input
-            id="image-upload"
-            type="file"
+            id='image-upload'
+            type='file'
             accept={accept}
             className={Styles.upload()}
             onChange={handleImageChange}
@@ -70,14 +70,14 @@ export const ImageUpload: React.FC<ImageUploadProps> = ({
           <div className={Styles.container()}>
             <img
               src={URL.createObjectURL(selectedImage)}
-              alt="Uploaded"
+              alt='Uploaded'
               className={Styles.imageUploaded()}
             />
             <div className={Styles.iconContainer()}>
               <Button
                 icon={<TrashIcon className={Styles.icon()} />}
-                intent="transparent"
-                type="button"
+                intent='transparent'
+                type='button'
                 onClick={handleRemoveImage}
               />
             </div>

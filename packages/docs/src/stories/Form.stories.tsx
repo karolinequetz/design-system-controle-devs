@@ -1,7 +1,7 @@
 import React from 'react';
 import type { StoryObj, Meta } from '@storybook/react';
 
-import { Form, FormProps } from '@controle-devs-ui/react';
+import { Form, FormProps, Input } from '@controle-devs-ui/react';
 
 export default {
   title: 'Components/Form',
@@ -21,13 +21,7 @@ export const Primary: StoryObj<FormProps> = {
             description: 'Por favor digite um e-mail válido',
           },
         ],
-        control: (
-          <input
-            className="box-border w-full  shadow-blackA9 inline-flex h-[35px] appearance-none items-center justify-center rounded-[4px] px-[10px] text-[15px] leading-none shadow-[0_0_0_1px] outline-none hover:shadow-[0_0_0_1px_black] focus:shadow-[0_0_0_2px_black]  selection:bg-blackA9"
-            type="email"
-            required
-          />
-        ),
+        control: <Input type="email" required />,
       },
       {
         fieldName: 'sugestao',
@@ -40,12 +34,16 @@ export const Primary: StoryObj<FormProps> = {
         ],
         control: (
           <textarea
-            className="box-border w-full inline-flex appearance-none items-center justify-center rounded-[4px] p-[10px] text-[15px] leading-none shadow-[0_0_0_1px] outline-none hover:shadow-[0_0_0_1px_black] focus:shadow-[0_0_0_2px_black]"
+            className="bg-blackA5 shadow-blackA9 dark:text-white dark:bg-gray-900 inline-flex h-[35px] w-[200px] appearance-none items-center justify-center rounded-[4px] px-[10px] text-[15px] leading-none text-black shadow-[0_0_0_1px] outline-none focus:shadow-[0_0_0_2px_black] selection:color-white selection:bg-blackA9 dark:focus:shadow-[0_0_0_2px_purple] "
             required
           />
         ),
       },
     ],
-    submitButtonName: 'Enviar',
+    submitButton: {
+      text: 'Enviar',
+      className: ' w-full inline-flex h-9 items-center justify-start ',
+    },
+    submit: () => console.log('formulário'),
   },
 };

@@ -10,4 +10,5 @@ export * from './components/Switch';
 export * from './components/Checkbox';
 export * from './components/FormInput';
 export * from './components/Input';
+export * from './components/MultiSelect';
 export * from './components/ImageUpload';

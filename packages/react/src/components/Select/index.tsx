@@ -1,18 +1,13 @@
-"use client";
-import React from "react";
-import * as SelectPrimitive from "@radix-ui/react-select";
-
-import * as Styles from "./styles";
+'use client';
+import React from 'react';
+import * as SelectPrimitive from '@radix-ui/react-select';
+import { Options } from '../../models/select';
+import * as Styles from './styles';
 import {
   CheckIcon,
   ChevronDownIcon,
   ChevronUpIcon,
-} from "@radix-ui/react-icons";
-
-interface OptionsProps {
-  id: string | number;
-  description: string;
-}
+} from '@radix-ui/react-icons';
 
 interface RootProps {
   defaultValue?: string;
@@ -39,21 +34,21 @@ interface ContentProps {
   onCloseAutoFocus?: () => void;
   onEscapeKeyDown?: () => void;
   onPointerDownOutside?: () => void;
-  position?: "item-aligned" | "popper";
-  side?: "top" | "right" | "bottom" | "left";
+  position?: 'item-aligned' | 'popper';
+  side?: 'top' | 'right' | 'bottom' | 'left';
   sideOffset?: number;
-  align?: "start" | "center" | "end";
+  align?: 'start' | 'center' | 'end';
   alignOffset?: number;
   avoidCollisions?: boolean;
   collisionBoundary?: Element | null | Array<Element | null>;
   collisionPadding?: number;
   arrowPadding?: number;
-  sticky?: "partial" | "always";
+  sticky?: 'partial' | 'always';
   hideWhenDetached?: boolean;
 }
 
 export interface SelectProps {
-  options: OptionsProps[];
+  options: Options[];
   placeholder?: string;
   descriptiveTextForAccessibility?: string;
   portal?: PortalProps;
@@ -76,7 +71,7 @@ export const Select = ({
       aria-label={descriptiveTextForAccessibility}
       className={Styles.selectTrigger()}
     >
-      <SelectPrimitive.Value placeholder={placeholder ?? "Selecione..."} />
+      <SelectPrimitive.Value placeholder={placeholder ?? 'Selecione...'} />
       <SelectPrimitive.Icon className={Styles.downArrowIcon()}>
         <ChevronDownIcon />
       </SelectPrimitive.Icon>
@@ -91,12 +86,12 @@ export const Select = ({
             {options.map((option) => (
               <SelectPrimitive.Item
                 {...item}
-                key={option.id}
-                value={option.description}
+                key={option.value}
+                value={option.label}
                 className={Styles.selectItem()}
               >
                 <SelectPrimitive.ItemText>
-                  {option.description}
+                  {option.label}
                 </SelectPrimitive.ItemText>
                 <SelectPrimitive.ItemIndicator className={Styles.checkItem()}>
                   <CheckIcon />

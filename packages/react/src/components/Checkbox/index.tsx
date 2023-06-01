@@ -1,9 +1,9 @@
-"use client";
-import React, { ReactNode } from "react";
-import * as CheckboxInput from "@radix-ui/react-checkbox";
-import { CheckIcon } from "@radix-ui/react-icons";
+'use client';
+import React, { ReactNode } from 'react';
+import * as CheckboxInput from '@radix-ui/react-checkbox';
+import { CheckIcon } from '@radix-ui/react-icons';
 
-import * as Styles from "./styles";
+import * as Styles from './styles';
 
 interface CheckboxRoot {
   defaultChecked?: boolean;
@@ -18,10 +18,15 @@ interface CheckboxRoot {
 interface CheckboxIndicator {
   asChild?: boolean;
 }
+interface TextProps {
+  label?: string | ReactNode;
+  classText?: string;
+}
 export interface CheckboxProps {
-  text: string | ReactNode;
-  root: CheckboxRoot;
-  indicator: CheckboxIndicator;
+  text?: TextProps;
+
+  root?: CheckboxRoot;
+  indicator?: CheckboxIndicator;
 }
 export const Checkbox = ({ text, root, indicator }: CheckboxProps) => (
   <CheckboxInput.Root {...root} className={Styles.checkboxRoot()}>
@@ -33,6 +38,6 @@ export const Checkbox = ({ text, root, indicator }: CheckboxProps) => (
         <CheckIcon className={Styles.checkboxIcon()} />
       </CheckboxInput.Indicator>
     </div>
-    <span className={Styles.span()}>{text}</span>
+    <span className={text?.classText || Styles.span()}>{text?.label}</span>
   </CheckboxInput.Root>
 );

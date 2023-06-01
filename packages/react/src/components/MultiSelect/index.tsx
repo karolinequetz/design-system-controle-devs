@@ -1,5 +1,9 @@
 import React from 'react';
-import Select, { components, OptionProps } from 'react-select';
+import Select, {
+  components,
+  OptionProps,
+  CSSObjectWithLabel,
+} from 'react-select';
 import { Options } from '../../models/select';
 import * as Styles from './styles';
 import { Checkbox } from '../Checkbox';
@@ -23,7 +27,10 @@ export interface MultiSelectProps {
 
 const InputOption = ({ children, ...props }: OptionProps) => {
   return (
-    <components.Option {...props}>
+    <components.Option
+      className={props.isSelected ? Styles.selectedOption() : Styles.option()}
+      {...props}
+    >
       <Checkbox
         root={{ checked: props.isSelected }}
         text={{ label: children, classText: Styles.text() }}
@@ -37,12 +44,19 @@ export const MultiSelect = ({
   checkbox,
   onChange,
 }: MultiSelectProps) => {
+  const customStyles = {
+    option: (base: CSSObjectWithLabel) => ({
+      ...base,
+      backgroundColor: 'none',
+    }),
+  };
   return (
     <Select
       {...select}
       onChange={() => onChange}
       className={Styles.select()}
       isMulti
+      menuIsOpen={true}
       classNames={{
         multiValueLabel: () => Styles.label(),
         multiValueRemove: () => Styles.close(),
@@ -53,6 +67,7 @@ export const MultiSelect = ({
           return Styles.option();
         },
       }}
+      styles={customStyles}
       components={
         checkbox
           ? {

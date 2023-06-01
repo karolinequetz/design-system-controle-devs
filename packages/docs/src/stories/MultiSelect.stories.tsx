@@ -22,7 +22,7 @@ export const Primary: StoryObj<MultiSelectProps> = {
       closeMenuOnSelect: true,
       hideSelectedOptions: true,
     },
-    onClick: () => console.log('itens selecionados'),
+    onChange: () => console.log('itens selecionados'),
   },
 };
 
@@ -35,6 +35,6 @@ export const Checkbox: StoryObj<MultiSelectProps> = {
       closeMenuOnSelect: false,
       hideSelectedOptions: false,
     },
-    onClick: () => console.log('itens selecionados'),
+    onChange: () => console.log('itens selecionados'),
   },
 };

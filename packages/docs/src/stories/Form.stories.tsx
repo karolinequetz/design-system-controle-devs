@@ -1,49 +1,65 @@
-import React from 'react';
-import type { StoryObj, Meta } from '@storybook/react';
-
-import { Form, FormProps, Input } from '@controle-devs-ui/react';
+import React, { useState } from 'react';
+import type { Meta } from '@storybook/react';
+import { useForm } from 'react-hook-form';
+import { zodResolver } from '@hookform/resolvers/zod';
+import * as z from 'zod';
+import {
+  Form,
+  Input,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+  Button,
+} from '@controle-devs-ui/react';
 
 export default {
   title: 'Components/Form',
   component: Form,
-} as Meta<FormProps>;
+} as Meta;
 
-export const Primary: StoryObj<FormProps> = {
-  args: {
-    field: [
-      {
-        fieldName: 'email',
-        label: 'E-mail',
-        message: [
-          { match: 'valueMissing', description: 'Por favor digite seu e-mail' },
-          {
-            match: 'typeMismatch',
-            description: 'Por favor digite um e-mail válido',
-          },
-        ],
-        control: <Input type="email" required />,
-      },
-      {
-        fieldName: 'sugestao',
-        label: 'Sugestão',
-        message: [
-          {
-            match: 'valueMissing',
-            description: 'Por favor deixe uma sugestão',
-          },
-        ],
-        control: (
-          <textarea
-            className="bg-blackA5 shadow-blackA9 dark:text-white dark:bg-gray-900 inline-flex h-[35px] w-[200px] appearance-none items-center justify-center rounded-[4px] px-[10px] text-[15px] leading-none text-black shadow-[0_0_0_1px] outline-none focus:shadow-[0_0_0_2px_black] selection:color-white selection:bg-blackA9 dark:focus:shadow-[0_0_0_2px_purple] "
-            required
-          />
-        ),
-      },
-    ],
-    submitButton: {
-      text: 'Enviar',
-      className: ' w-full inline-flex h-9 items-center justify-start ',
+export const Default = () => {
+  const [output, setOutput] = useState('');
+
+  const formSchema = z.object({
+    username: z.string().min(2, {
+      message: 'O nome de usuário deve ter pelo menos 2 caracteres..',
+    }),
+  });
+
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
+    defaultValues: {
+      username: '',
     },
-    submit: () => console.log('formulário'),
-  },
+  });
+
+  function onSubmit(values: z.infer<typeof formSchema>) {
+    setOutput(JSON.stringify(values, null, 2));
+  }
+
+  return (
+    <Form {...form}>
+      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+        <FormField
+          control={form.control}
+          name="username"
+          render={({ field }) => (
+            <FormItem className="flex flex-col space-y-2 ">
+              <FormLabel className=" bold text-lg dark:text-white">
+                Username
+              </FormLabel>
+              <FormControl>
+                <Input placeholder="nome" {...field} className="mt-4" />
+              </FormControl>
+              <FormMessage className="text-red-900" />
+            </FormItem>
+          )}
+        />
+        <Button type="submit" text="Enviar"></Button>
+      </form>
+      <pre className=" dark:text-white">{output}</pre>
+    </Form>
+  );
 };

@@ -1,11 +1,6 @@
 import { cva } from 'class-variance-authority';
 
-export const formContainer = cva('w-full');
-
-export const field = cva('grid mb-2.5');
-
-export const fieldContent = cva('flex flex-col ');
-
-export const label = cva('text-base font-medium leading-9 dark:text-white');
-
-export const validationMessage = cva('text-sm text-red-900 opacity-[0.8]');
+export const itemContext = cva('flex flex-col space-y-8');
+export const formDescription = cva('text-sm');
+export const formMessage = cva('text-sm font-medium text-red-900');
+export const itemError = cva('text-red-900');

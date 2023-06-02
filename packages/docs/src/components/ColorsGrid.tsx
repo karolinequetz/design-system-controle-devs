@@ -1,3 +1,4 @@
+import React from 'react';
 import { colors } from '@controle-devs-ui/tokens';
 import { getContrast } from 'polished';
 

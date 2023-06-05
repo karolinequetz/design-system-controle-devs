@@ -11,6 +11,7 @@ export interface CardProps {
   children: ReactNode;
   image: string;
   skills: string[];
+  moreDetails?: boolean;
   onClick: () => void;
   onChange: () => void;
   onDelete: () => void;
@@ -23,8 +24,9 @@ export const Card = ({
   onChange,
   onDelete,
   onClick,
+  moreDetails,
 }: CardProps) => (
-  <div className={Styles.container()} onClick={onClick}>
+  <div className={Styles.container()}>
     <div className={Styles.actions()}>
       <Button
         className={Styles.EditAndDeleteButtons()}
@@ -51,5 +53,10 @@ export const Card = ({
         </span>
       ))}
     </div>
+    {moreDetails && (
+      <div className={Styles.moreDetails()}>
+        <Button size={'small'} text="Mais detalhes" onClick={onClick} />
+      </div>
+    )}
   </div>
 );

@@ -12,7 +12,7 @@ import {
 interface RootProps {
   defaultValue?: string;
   value?: string;
-  onValueChange?: () => void;
+  onValueChange?: (value: string) => void | (() => void);
   defaultOpen?: boolean;
   open?: boolean;
   onOpenChange?: () => void;

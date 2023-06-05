@@ -1,5 +1,11 @@
 # @controle-devs-ui/react
 
+## 1.1.1
+
+### Patch Changes
+
+- Remove use client from form component
+
 ## 1.1.0
 
 ### Minor Changes

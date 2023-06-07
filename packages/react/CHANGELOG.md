@@ -1,5 +1,11 @@
 # @controle-devs-ui/react
 
+## 2.0.0
+
+### Major Changes
+
+- Card removed from storybook and components
+
 ## 1.1.2
 
 ### Patch Changes

@@ -93,9 +93,7 @@ export const Filter = ({
             </div>
           ))}
           <div className={Styles.searchButton()}>
-            <Button text={buttonText} onClick={handleSearch}>
-              Buscar
-            </Button>
+            <Button text={buttonText} onClick={handleSearch} />
           </div>
         </div>
       )}

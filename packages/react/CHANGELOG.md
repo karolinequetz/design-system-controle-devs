@@ -1,5 +1,11 @@
 # @controle-devs-ui/react
 
+## 1.1.2
+
+### Patch Changes
+
+- Adjustment multiselect
+
 ## 1.1.1
 
 ### Patch Changes

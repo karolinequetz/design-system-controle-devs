@@ -14,9 +14,19 @@ export interface FilterProps {
   filterOptions: { label: string; options: FilterOption[] }[];
   items: string[];
   onFilter: (filteredItems: string[]) => void;
+  placeholder?: string;
+  descriptiveTextForAccessibility?: string;
+  buttonText: string;
 }
 
-export const Filter = ({ filterOptions, items, onFilter }: FilterProps) => {
+export const Filter = ({
+  filterOptions,
+  items,
+  onFilter,
+  placeholder,
+  descriptiveTextForAccessibility,
+  buttonText,
+}: FilterProps) => {
   const [selectedValues, setSelectedValues] = useState<{
     [key: string]: string;
   }>({});
@@ -70,8 +80,10 @@ export const Filter = ({ filterOptions, items, onFilter }: FilterProps) => {
                   value: option.value,
                   label: option.label,
                 }))}
-                placeholder="Selecione uma opção"
-                descriptiveTextForAccessibility="Selecione uma opção"
+                placeholder={placeholder}
+                descriptiveTextForAccessibility={
+                  descriptiveTextForAccessibility
+                }
                 root={{
                   defaultValue: selectedValues[filterOption.label] || '',
                   onValueChange: (value) =>
@@ -81,7 +93,7 @@ export const Filter = ({ filterOptions, items, onFilter }: FilterProps) => {
             </div>
           ))}
           <div className={Styles.searchButton()}>
-            <Button text="Buscar" onClick={handleSearch}>
+            <Button text={buttonText} onClick={handleSearch}>
               Buscar
             </Button>
           </div>

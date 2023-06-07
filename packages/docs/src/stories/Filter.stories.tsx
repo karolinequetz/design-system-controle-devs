@@ -28,6 +28,8 @@ const Template = (args: FilterProps) => <Filter {...args} />;
 export const Default = Template.bind({});
 Default.args = {
   filterOptions,
+  buttonText: 'Filtrar',
+  placeholder: 'Selecione uma opção',
   onFilter: (filteredItems: string[]) => {
     console.log('Filtered items:', filteredItems);
   },

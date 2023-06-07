@@ -13,3 +13,4 @@ export * from './components/MultiSelect';
 export * from './components/Form';
 export * from './components/Label';
 export * from './components/ImageUpload';
+export * from './components/Filter';

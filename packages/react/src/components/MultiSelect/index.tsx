@@ -19,6 +19,7 @@ interface SelectProps {
   isLoading?: boolean;
   closeMenuOnSelect?: boolean;
   hideSelectedOptions?: boolean;
+  menuIsOpen?: boolean;
 }
 export interface MultiSelectProps {
   onChange: () => void;
@@ -57,7 +58,6 @@ export const MultiSelect = ({
       onChange={() => onChange}
       className={Styles.select()}
       isMulti
-      menuIsOpen={true}
       classNames={{
         multiValueLabel: () => Styles.label(),
         multiValueRemove: () => Styles.close(),

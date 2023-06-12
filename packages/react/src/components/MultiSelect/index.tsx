@@ -5,7 +5,7 @@ import Select, {
   OptionProps,
   CSSObjectWithLabel,
 } from 'react-select';
-import { Options } from '../../models/select';
+import { Options, MultiValueProps } from '../../models/select';
 import * as Styles from './styles';
 import { Checkbox } from '../Checkbox';
 
@@ -22,7 +22,7 @@ interface SelectProps {
   menuIsOpen?: boolean;
 }
 export interface MultiSelectProps {
-  onChange: () => void;
+  onChange: (options: MultiValueProps) => void;
   select: SelectProps;
   checkbox?: boolean;
 }
@@ -55,7 +55,7 @@ export const MultiSelect = ({
   return (
     <Select
       {...select}
-      onChange={() => onChange}
+      onChange={(options) => onChange(options as MultiValueProps)}
       className={Styles.select()}
       isMulti
       classNames={{

@@ -1,13 +1,19 @@
+import React, { useState } from 'react';
 import type { StoryObj, Meta } from '@storybook/react';
 
-import { MultiSelect, MultiSelectProps } from '@controle-devs-ui/react';
+import {
+  MultiSelect,
+  MultiSelectProps,
+  MultiValueProps,
+  Options,
+} from '@controle-devs-ui/react';
 
 export default {
   title: 'Components/MultiSelect',
   component: MultiSelect,
 } as Meta<MultiSelectProps>;
 
-const skills = [
+const skills: Options[] = [
   { value: '1', label: 'React Js' },
   { value: '2', label: 'React Native' },
   { value: '3', label: 'Angular' },
@@ -37,4 +43,27 @@ export const Checkbox: StoryObj<MultiSelectProps> = {
     },
     onChange: () => console.log('itens selecionados'),
   },
+};
+export const Default = () => {
+  const [state, setState] = useState<string[]>([]);
+
+  const onChangeHardSkills = (selectedOptions: MultiValueProps) => {
+    const options = selectedOptions.map((option) => option.label);
+    setState(options);
+  };
+
+  return (
+    <div>
+      <MultiSelect
+        checkbox={true}
+        select={{
+          options: skills,
+          placeholder: 'Selecione...',
+        }}
+        onChange={onChangeHardSkills}
+      />
+
+      <div className="dark:text-white">{JSON.stringify(state)}</div>
+    </div>
+  );
 };

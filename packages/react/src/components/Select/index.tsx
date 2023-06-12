@@ -72,8 +72,8 @@ export const Select = ({
       className={Styles.selectTrigger()}
     >
       <SelectPrimitive.Value placeholder={placeholder ?? 'Selecione...'} />
-      <SelectPrimitive.Icon className={Styles.downArrowIcon()}>
-        <ChevronDownIcon />
+      <SelectPrimitive.Icon>
+        <ChevronDownIcon className={Styles.downArrowIcon()} />
       </SelectPrimitive.Icon>
     </SelectPrimitive.Trigger>
     <SelectPrimitive.Portal container={portal?.container()}>
@@ -81,7 +81,7 @@ export const Select = ({
         <SelectPrimitive.ScrollUpButton className={Styles.upArrowIcon()}>
           <ChevronUpIcon />
         </SelectPrimitive.ScrollUpButton>
-        <SelectPrimitive.Viewport className={Styles.viewport()}>
+        <SelectPrimitive.Viewport>
           <SelectPrimitive.Group>
             {options.map((option) => (
               <SelectPrimitive.Item

@@ -4,6 +4,7 @@ import type { StoryObj, Meta } from '@storybook/react';
 import {
   MultiSelect,
   MultiSelectProps,
+  MultiValueProps,
   Options,
 } from '@controle-devs-ui/react';
 
@@ -46,7 +47,7 @@ export const Checkbox: StoryObj<MultiSelectProps> = {
 export const Default = () => {
   const [state, setState] = useState<string[]>([]);
 
-  const onChangeHardSkills = (selectedOptions) => {
+  const onChangeHardSkills = (selectedOptions: MultiValueProps) => {
     const options = selectedOptions.map((option) => option.label);
     setState(options);
   };

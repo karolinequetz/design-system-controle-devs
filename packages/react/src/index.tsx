@@ -15,4 +15,4 @@ export * from './components/Label';
 export * from './components/ImageUpload';
 export * from './components/Filter';
 export { useForm } from 'react-hook-form';
-export * from '../../react/src/models/select';
+export type { MultiValueProps, Options } from '../../react/src/models/select';

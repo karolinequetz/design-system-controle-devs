@@ -1,5 +1,11 @@
 # @controle-devs-ui/react
 
+## 3.0.1
+
+### Patch Changes
+
+- Component adjustments
+
 ## 3.0.0
 
 ### Major Changes

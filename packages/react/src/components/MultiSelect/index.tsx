@@ -34,7 +34,7 @@ const InputOption = ({ children, ...props }: OptionProps) => {
       {...props}
     >
       <Checkbox
-        root={{ checked: props.isSelected }}
+        root={{ defaultChecked: props.isSelected }}
         text={{ label: children, classText: Styles.text() }}
       />
     </components.Option>

@@ -1,6 +1,6 @@
 {
   "name": "@controle-devs-ui/react",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "description": "",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -38,6 +38,7 @@
     "@radix-ui/react-select": "^1.2.1",
     "@radix-ui/react-slot": "^1.0.2",
     "@radix-ui/react-switch": "^1.0.2",
+    "@radix-ui/react-tooltip": "^1.0.6",
     "autoprefixer": "^10.4.14",
     "class-variance-authority": "^0.6.0",
     "lucide-react": "^0.233.0",

@@ -14,6 +14,7 @@ export * from './components/Form';
 export * from './components/Label';
 export * from './components/ImageUpload';
 export * from './components/Filter';
+export * from './components/Tooltip';
 export * from './components/SearchInput';
 export { useForm } from 'react-hook-form';
 export type { MultiValueProps, Options } from '../../react/src/models/select';

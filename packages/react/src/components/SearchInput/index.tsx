@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaSearch } from 'react-icons/fa';
+import { Search } from 'lucide-react';
 import { Input } from '../Input';
 import * as Styles from './styles';
 
@@ -24,7 +24,7 @@ export const SearchInput = ({ placeholder, onChange }: SearchInputProps) => {
         value={searchQuery}
         onChange={handleChange}
       />
-      <FaSearch className={Styles.icon()} />
+      <Search className={Styles.icon()} />
     </div>
   );
 };

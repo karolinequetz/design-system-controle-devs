@@ -17,12 +17,15 @@ export default {
   ],
 } as Meta<SelectProps>;
 
+const getElement = () =>
+  document.getElementById('storybook-root') as HTMLElement;
+
 export const Primary: StoryObj<SelectProps> = {
   args: {
     placeholder: 'Selecione as hard skills ...',
     descriptiveTextForAccessibility: 'select com opções de hard skills ',
     portal: {
-      container: () => document.getElementById('storybook-root'),
+      container: getElement,
     },
     options: [
       { value: '1', label: 'React Js' },
@@ -38,7 +41,7 @@ export const Disabled: StoryObj<SelectProps> = {
     placeholder: 'Selecione as hard skills ...',
     descriptiveTextForAccessibility: 'select com opções de hard skills ',
     portal: {
-      container: () => document.getElementById('storybook-root'),
+      container: getElement,
     },
     content: {
       position: 'popper',

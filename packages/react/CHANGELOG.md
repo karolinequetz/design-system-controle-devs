@@ -1,5 +1,11 @@
 # @controle-devs-ui/react
 
+## 3.1.0
+
+### Minor Changes
+
+- Added SearchInput component
+
 ## 3.0.2
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @controle-devs-ui/react
 
+## 3.2.0
+
+### Minor Changes
+
+- Added Tooltip component
+
 ## 3.1.0
 
 ### Minor Changes

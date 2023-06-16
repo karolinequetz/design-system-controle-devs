@@ -1,5 +1,11 @@
 # @controle-devs-ui/react
 
+## 3.3.0
+
+### Minor Changes
+
+- Added Toast component
+
 ## 3.2.0
 
 ### Minor Changes

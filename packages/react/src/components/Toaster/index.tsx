@@ -10,6 +10,8 @@ import {
 } from '../Toast';
 import { useToast } from '../../hooks/toast';
 
+import * as Styles from './styles';
+
 export function Toaster() {
   const { toasts } = useToast();
 
@@ -25,8 +27,8 @@ export function Toaster() {
       }) {
         return (
           <Toast key={id} {...props}>
-            <div className={classNameContent || 'grid gap-1'}>
-              {title && <ToastTitle className="">{title}</ToastTitle>}
+            <div className={classNameContent || Styles.content()}>
+              {title && <ToastTitle>{title}</ToastTitle>}
               {description && (
                 <ToastDescription>{description}</ToastDescription>
               )}

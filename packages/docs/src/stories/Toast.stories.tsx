@@ -45,12 +45,11 @@ export const Action = () => {
 
 export const Success = () => {
   const onClick = () => {
-    toast({
+    toast.success({
       title: 'Sucesso!',
       description: 'Usuário cadastrado com sucesso',
       classNameContent: 'flex flex-row gap-1 pl-2',
       className: 'p-4',
-      variant: 'success',
     });
   };
 
@@ -64,12 +63,11 @@ export const Success = () => {
 
 export const Error = () => {
   const onClick = () => {
-    toast({
+    toast.error({
       title: 'Erro!',
       description: 'Erro ao cadastrar usuário',
       classNameContent: 'flex flex-row gap-1 pl-2',
       className: 'p-4',
-      variant: 'error',
     });
   };
 
@@ -83,12 +81,11 @@ export const Error = () => {
 
 export const Warning = () => {
   const onClick = () => {
-    toast({
+    toast.warning({
       title: 'Atenção!',
       description: 'Preencha todos os campos',
       classNameContent: 'flex flex-row gap-1 pl-2',
       className: 'p-4',
-      variant: 'warning',
     });
   };
 

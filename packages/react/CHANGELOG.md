@@ -1,5 +1,11 @@
 # @controle-devs-ui/react
 
+## 3.3.1
+
+### Patch Changes
+
+- Updated dist folder
+
 ## 3.3.0
 
 ### Minor Changes

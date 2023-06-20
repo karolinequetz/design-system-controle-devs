@@ -1,5 +1,11 @@
 # @controle-devs-ui/react
 
+## 4.0.0
+
+### Major Changes
+
+- Fixed modal overlay and button text
+
 ## 3.0.2
 
 ### Patch Changes

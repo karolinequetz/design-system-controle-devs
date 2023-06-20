@@ -8,8 +8,8 @@ import { Button } from '../Button';
 import * as Styles from './styles';
 
 export interface ModalProps {
-  title: ReactNode | string;
-  description: string;
+  title?: ReactNode | string;
+  description?: string;
   children?: ReactNode;
   open: boolean;
   onClose?: () => void;

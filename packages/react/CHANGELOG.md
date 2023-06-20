@@ -5,6 +5,35 @@
 ### Major Changes
 
 - Fixed modal overlay and button text
+## 3.4.0
+
+### Minor Changes
+
+- Modified the use of toast component
+
+## 3.3.1
+
+### Patch Changes
+
+- Updated dist folder
+
+## 3.3.0
+
+### Minor Changes
+
+- Added Toast component
+
+## 3.2.0
+
+### Minor Changes
+
+- Added Tooltip component
+
+## 3.1.0
+
+### Minor Changes
+
+- Added SearchInput component
 
 ## 3.0.2
 

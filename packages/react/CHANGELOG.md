@@ -1,10 +1,17 @@
 # @controle-devs-ui/react
 
+## 4.1.0
+
+### Minor Changes
+
+- changed modal props to optional
+
 ## 4.0.0
 
 ### Major Changes
 
 - Fixed modal overlay and button text
+
 ## 3.4.0
 
 ### Minor Changes

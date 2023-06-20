@@ -1,5 +1,11 @@
 # @controle-devs-ui/react
 
+## 4.2.0
+
+### Minor Changes
+
+- fixed modal height
+
 ## 4.1.0
 
 ### Minor Changes

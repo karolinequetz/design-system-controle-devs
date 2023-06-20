@@ -1,7 +1,7 @@
 import { cva } from 'class-variance-authority';
 
 export const overlay = cva(
-  'bg-neutral-800 data-[state=open]:animate-overlayShow fixed inset-0 ',
+  'bg-blackA9 data-[state=open]:animate-overlayShow fixed inset-0 ',
 );
 
 export const content = cva(

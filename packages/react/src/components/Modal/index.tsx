@@ -13,6 +13,7 @@ export interface ModalProps {
   children?: ReactNode;
   open: boolean;
   onClose?: () => void;
+  buttonText: string;
 }
 
 export const Modal = ({
@@ -21,6 +22,7 @@ export const Modal = ({
   children,
   open,
   onClose,
+  buttonText,
 }: ModalProps) => {
   return (
     <Dialog.Root open={open} onOpenChange={onClose}>
@@ -34,7 +36,7 @@ export const Modal = ({
           {children}
           <div className={Styles.closeDiv()}>
             <Dialog.Close asChild>
-              <Button text={title} size="small" onClick={onClose} />
+              <Button text={buttonText} size="small" onClick={onClose} />
             </Dialog.Close>
           </div>
           <Dialog.Close asChild>

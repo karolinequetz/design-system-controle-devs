@@ -1,5 +1,11 @@
 # @controle-devs-ui/react
 
+## 4.5.0
+
+### Minor Changes
+
+- changed button dark color
+
 ## 4.4.0
 
 ### Minor Changes

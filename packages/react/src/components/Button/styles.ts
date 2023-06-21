@@ -7,10 +7,10 @@ export const button = cva(
     variants: {
       intent: {
         primary:
-          'bg-violet-700 text-white hover:bg-violet-600  focus:ring-white focus:ring-offset-2 rounded-md ',
+          'bg-purple-700  dark:bg-blue-700 text-white hover:bg-purple-600  dark:hover:bg-blue-600 focus:ring-white focus:ring-offset-2 rounded-md ',
 
         secondary:
-          'bg-transparent border-indigo-700 hover:text-white border-2 text-indigo-700 dark:text-white hover:bg-violet-600  focus:ring-white focus:ring-offset-2  rounded-md h-8 w-40',
+          'bg-transparent border-purple-700  dark:border-blue-700  dark:hover:text-blue-700 hover:text-white border-2 text-purple-700 dark:text-white hover:bg-purple-600  focus:ring-white focus:ring-offset-2  rounded-md h-8 w-40',
         menuButton:
           'rounded-full w-8 flex bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800',
         transparent: ' rounded-s-sm bg-transparent w-2',

@@ -1,5 +1,11 @@
 # @controle-devs-ui/react
 
+## 4.6.0
+
+### Minor Changes
+
+- Added react-select props
+
 ## 4.5.0
 
 ### Minor Changes

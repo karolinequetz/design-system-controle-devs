@@ -4,12 +4,13 @@ import Select, {
   components,
   OptionProps,
   CSSObjectWithLabel,
+  Props,
 } from 'react-select';
 import { Options, MultiValueProps } from '../../models/select';
 import * as Styles from './styles';
 import { Checkbox } from '../Checkbox';
 
-interface SelectProps {
+interface SelectProps extends Props {
   options: Options[];
   placeholder?: string;
   name?: string;
@@ -45,6 +46,7 @@ export const MultiSelect = ({
   select,
   checkbox,
   onChange,
+  ...props
 }: MultiSelectProps) => {
   const customStyles = {
     option: (base: CSSObjectWithLabel) => ({
@@ -55,6 +57,7 @@ export const MultiSelect = ({
   return (
     <Select
       {...select}
+      {...props}
       onChange={(options) => onChange(options as MultiValueProps)}
       className={Styles.select()}
       isMulti

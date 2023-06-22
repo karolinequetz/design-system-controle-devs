@@ -2,10 +2,12 @@ import React, { useState } from 'react';
 import type { StoryObj, Meta } from '@storybook/react';
 
 import {
+  ActionMeta,
   MultiSelect,
   MultiSelectProps,
-  MultiValueProps,
+  MultiValue,
   Options,
+  SingleValue,
 } from '@controle-devs-ui/react';
 
 export default {
@@ -22,12 +24,11 @@ const skills: Options[] = [
 
 export const Primary: StoryObj<MultiSelectProps> = {
   args: {
-    select: {
-      options: skills,
-      placeholder: 'Selecione as opções',
-      closeMenuOnSelect: true,
-      hideSelectedOptions: true,
-    },
+    options: skills,
+    placeholder: 'Selecione as opções',
+    closeMenuOnSelect: true,
+    hideSelectedOptions: true,
+
     onChange: () => console.log('itens selecionados'),
   },
 };
@@ -35,31 +36,33 @@ export const Primary: StoryObj<MultiSelectProps> = {
 export const Checkbox: StoryObj<MultiSelectProps> = {
   args: {
     checkbox: true,
-    select: {
-      options: skills,
-      placeholder: 'Selecione as opções',
-      closeMenuOnSelect: false,
-      hideSelectedOptions: false,
-    },
+    options: skills,
+    placeholder: 'Selecione as opções',
+    closeMenuOnSelect: false,
+    hideSelectedOptions: false,
+
     onChange: () => console.log('itens selecionados'),
   },
 };
 export const Default = () => {
   const [state, setState] = useState<string[]>([]);
 
-  const onChangeHardSkills = (selectedOptions: MultiValueProps) => {
-    const options = selectedOptions.map((option) => option.label);
-    setState(options);
+  const onChangeHardSkills = (
+    newValue: MultiValue<Options> | SingleValue<Options>,
+    actionMeta: ActionMeta<Options>,
+  ) => {
+    if (Array.isArray(newValue)) {
+      const options = newValue.map((option) => option.label);
+      setState(options);
+    }
   };
 
   return (
     <div>
       <MultiSelect
         checkbox={true}
-        select={{
-          options: skills,
-          placeholder: 'Selecione...',
-        }}
+        options={skills}
+        placeholder="Selecione..."
         onChange={onChangeHardSkills}
       />
 

@@ -19,5 +19,6 @@ export * from './components/SearchInput';
 export * from './components/Toaster';
 export * from './components/Toast';
 export { useForm } from 'react-hook-form';
+export type { ActionMeta, MultiValue, SingleValue } from 'react-select';
 export { reducer, toast, useToast } from './hooks/toast';
 export type { MultiValueProps, Options } from '../../react/src/models/select';

@@ -1,6 +1,6 @@
 {
   "name": "@controle-devs-ui/react",
-  "version": "4.6.0",
+  "version": "4.7.0",
   "description": "",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",

@@ -1,5 +1,11 @@
 # @controle-devs-ui/react
 
+## 4.7.0
+
+### Minor Changes
+
+- Multiselect component improvements
+
 ## 4.6.0
 
 ### Minor Changes

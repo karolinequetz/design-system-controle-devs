@@ -6,29 +6,15 @@ import Select, {
   CSSObjectWithLabel,
   Props,
 } from 'react-select';
-import { Options, MultiValueProps } from '../../models/select';
+import { Options } from '../../models/select';
 import * as Styles from './styles';
 import { Checkbox } from '../Checkbox';
 
-interface SelectProps extends Props {
-  options: Options[];
-  placeholder?: string;
-  name?: string;
-  isClearable?: boolean;
-  isSearchable?: boolean;
-  isDisabled?: boolean;
-  isLoading?: boolean;
-  closeMenuOnSelect?: boolean;
-  hideSelectedOptions?: boolean;
-  menuIsOpen?: boolean;
-}
-export interface MultiSelectProps {
-  onChange: (options: MultiValueProps) => void;
-  select: SelectProps;
+export interface MultiSelectProps extends Props<Options> {
   checkbox?: boolean;
 }
 
-const InputOption = ({ children, ...props }: OptionProps) => {
+const InputOption = ({ children, ...props }: OptionProps<Options>) => {
   return (
     <components.Option
       className={props.isSelected ? Styles.selectedOption() : Styles.option()}
@@ -42,12 +28,7 @@ const InputOption = ({ children, ...props }: OptionProps) => {
   );
 };
 
-export const MultiSelect = ({
-  select,
-  checkbox,
-  onChange,
-  ...props
-}: MultiSelectProps) => {
+export const MultiSelect = ({ checkbox, ...props }: MultiSelectProps) => {
   const customStyles = {
     option: (base: CSSObjectWithLabel) => ({
       ...base,
@@ -56,9 +37,6 @@ export const MultiSelect = ({
   };
   return (
     <Select
-      {...select}
-      {...props}
-      onChange={(options) => onChange(options as MultiValueProps)}
       className={Styles.select()}
       isMulti
       classNames={{
@@ -79,6 +57,7 @@ export const MultiSelect = ({
             }
           : undefined
       }
+      {...props}
     />
   );
 };

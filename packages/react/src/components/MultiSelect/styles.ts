@@ -13,3 +13,9 @@ export const selectedOption = cva(
 );
 
 export const text = cva('ml-2 select-none text-sm font-medium');
+
+export const checkboxContent = cva('flex items-center  focus:outline-none');
+
+export const checkbox = cva(
+  'flex h-4 w-4 accent-purple-700 dark:accent-blue-700  items-center justify-center rounded bg-gray-100 dark:border-blue-700 border-2 border-purple-700',
+);

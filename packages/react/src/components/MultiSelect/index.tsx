@@ -8,7 +8,6 @@ import Select, {
 } from 'react-select';
 import { Options } from '../../models/select';
 import * as Styles from './styles';
-import { Checkbox } from '../Checkbox';
 
 export interface MultiSelectProps extends Props<Options> {
   checkbox?: boolean;
@@ -20,10 +19,15 @@ const InputOption = ({ children, ...props }: OptionProps<Options>) => {
       className={props.isSelected ? Styles.selectedOption() : Styles.option()}
       {...props}
     >
-      <Checkbox
-        root={{ defaultChecked: props.isSelected }}
-        text={{ label: children, classText: Styles.text() }}
-      />
+      <div className={Styles.checkboxContent()}>
+        <input
+          className={Styles.checkbox()}
+          type="checkbox"
+          checked={props.isSelected}
+          defaultChecked={props.isSelected}
+        />
+        <label className={Styles.text()}>{children}</label>
+      </div>
     </components.Option>
   );
 };

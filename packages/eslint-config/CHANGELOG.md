@@ -1,5 +1,11 @@
 # @controle-devs-ui/eslint-config
 
+## 3.1.0
+
+### Minor Changes
+
+- Added peerDependencies and peerDependenciesMeta
+
 ## 3.0.0
 
 ### Major Changes

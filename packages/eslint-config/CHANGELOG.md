@@ -1,5 +1,11 @@
 # @controle-devs-ui/eslint-config
 
+## 3.0.0
+
+### Major Changes
+
+- Removed global.js
+
 ## 2.1.0
 
 ### Minor Changes

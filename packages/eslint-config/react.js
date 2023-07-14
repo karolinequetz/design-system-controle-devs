@@ -1,37 +1,25 @@
-
+const globals = require("./globals");
 
 module.exports = {
   env: {
-    browser: true,
-    es2021: true,
-    jest: true,
+    ...globals.env,
   },
   extends: [
-    'standard',
-    'plugin:prettier/recommended',
+    ...globals.extends,
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     'plugin:@typescript-eslint/recommended',
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
+    ...globals.parserOptions,
     ecmaFeatures: {
       jsx: true,
     },
   },
   plugins: ["react", "jsx-a11y", "@typescript-eslint"],
   rules: {
-    'prettier/prettier': ["error", {
-      'printWidth': 80,
-      'tabWidth': 2,
-      'singleQuote': true,
-      'trailingComma': 'all',
-      'arrowParens': 'always',
-      'semi': true,
-      'endOfLine': 'auto',
-    }],
+    ...globals.rules,
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",
     "jsx-a11y/alt-text": [

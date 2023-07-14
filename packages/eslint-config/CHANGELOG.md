@@ -1,5 +1,11 @@
 # @controle-devs-ui/eslint-config
 
+## 3.3.0
+
+### Minor Changes
+
+- Added global.js in react.js
+
 ## 3.2.0
 
 ### Minor Changes

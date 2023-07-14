@@ -1,10 +1,10 @@
 {
   "name": "@controle-devs-ui/eslint-config",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "license": "MIT",
   "private": false,
   "description": "ESLint configuration",
-  "main": "react.js",
+  "main": "index.js",
   "dependencies": {
     "eslint-plugin-react": "^7.32.2",
     "@typescript-eslint/eslint-plugin": "^5.59.6",

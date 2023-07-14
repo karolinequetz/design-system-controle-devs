@@ -1,0 +1,2 @@
+import{a}from"./_commonjsHelpers-87174ba5.js";import{f as c,j as n,g as i}from"./mapValues-dd82f3e4.js";var s=c,b=n,j=i,p="[object Object]",f=Function.prototype,l=Object.prototype,e=f.toString,u=l.hasOwnProperty,g=e.call(Object);function O(r){if(!j(r)||s(r)!=p)return!1;var o=b(r);if(o===null)return!0;var t=u.call(o,"constructor")&&o.constructor;return typeof t=="function"&&t instanceof t&&e.call(t)==g}var P=O;const m=a(P);export{m as a,P as i};
+//# sourceMappingURL=isPlainObject-e5f4cd8c.js.map

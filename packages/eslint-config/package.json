@@ -1,11 +1,11 @@
 {
   "name": "@controle-devs-ui/eslint-config",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "license": "MIT",
   "private": false,
   "description": "ESLint configuration",
   "main": "react.js",
-  "devDependencies": {
+  "dependencies": {
     "eslint-plugin-react": "^7.32.2",
     "@typescript-eslint/eslint-plugin": "^5.59.6",
     "@typescript-eslint/parser": "^5.59.6",
